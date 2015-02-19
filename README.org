@@ -1,0 +1,16 @@
+#+TITLE: Slideszz
+#+DESCRIPTION: slides, mixed one
+
+#+STARTUP: showall
+
+** this includes following:
+  |-------------+-----------------+-----------------------+--------------------|
+  | topic       | date            | Remarks               | includes           |
+  |-------------+-----------------+-----------------------+--------------------|
+  | ShellBasics | Thu 19 Feb 2015 | Becoming a ShellAngel | Basic Introduction |
+  |             |                 |                       |                    |
+
+*Credits to Respective people:*
+  - who's provide images/gifs/stuffs on google 
+  - who support
+   
