@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Being Productive</title>
+<!-- 2015-08-06 Thu 07:51 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="description" content="Lunch and Learn @cloudfactory on Thu Aug 6 2015"
+ />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Being Productive</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">CONTENTS:</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>tmux &amp; tmuxinator 
+</li>
+<li>vi [presenter: <a href="http://github.com/xha003/">xhagrg</a>]
+</li>
+<li>brower plugins
+</li>
+<li>shell-tips/tricks
+</li>
+</ul>
+</div>
+<ul class="org-ul"><li>TMUX/TMUXINATOR<br  /><ul class="org-ul"><li>TMUX<br  /><div class="outline-text-4" id="text-1-1-1">
+<ul class="org-ul">
+<li>use-case:
+<ul class="org-ul">
+<li>iTerm2 startup in early morning 
+<b>&#x2026;will be show in demo</b>
+</li>
+<li>watching over irritating logs on server
+</li>
+<li>tired of screen-process #hard to collaborate
+</li>
+</ul>
+</li>
+
+<li>intro:
+
+<div id="fig:tmux-intro" class="figure">
+<p><img src="./tmux-readme.png" alt="tmux-readme.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Tmux Readme</p>
+</div>
+</li>
+
+<li>tmux in action:
+
+<div id="fig:tmux-in-action" class="figure">
+<p><img src="./tmux-in-action.png" alt="tmux-in-action.png" />
+</p>
+<p><span class="figure-number">Figure 2:</span> Tmux in action</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+
+<li>TMUXINATOR<br  /><div class="outline-text-4" id="text-1-1-2">
+<p>
+its a <b>gem</b> to manage the tmux session
+</p>
+<ul class="org-ul">
+<li>step1: installtion
+
+<pre class="example">
+gem install tmuxinator
+</pre>
+</li>
+
+<li>step2: configuration
+
+<pre class="example">
+$ export $EDITOR=your_awesome_editor
+$ mux new your_awesome_project_name  #yamal config generated at ~/.tmuxinator/
+</pre>
+</li>
+
+<li>step3: run
+<pre class="example">
+$ mux your_awesome_project_name
+</pre>
+</li>
+
+<li><a href="http://showterm.io/0cae8fa10041acea1a311">demo:</a>
+  &lt;iframe src="<a href="http://showterm.io/0cae8fa10041acea1a311#fast">http://showterm.io/0cae8fa10041acea1a311#fast</a>" width="640" height="480"&gt;&lt;/iframe&gt; 
+</li>
+
+<li>Extra for <b>iTerm</b> Users
+
+<p>
+first detatch <b><b>ctrl+a d</b></b> and:
+</p>
+<pre class="example">
+$ tmux ls
+$ tmux -CC attach -t session_name
+</pre>
+</li>
+</ul>
+</div>
+</li></ul>
+</li>
+
+<li>VI<br  /><div class="outline-text-3" id="text-1-2">
+<ul class="org-ul">
+<li>modal editing of file, 
+Eg: w for word; who needs to remember that
+</li>
+</ul>
+
+<pre class="example">
+- self.quit()  
+    reason: me eamcs aficionado
+</pre>
+<ul class="org-ul">
+<li>vim &amp; packages
+<ul class="org-ul">
+<li>vim: improved vi
+</li>
+<li>pkgs: 
+<ul class="org-ul">
+<li>nerdtree
+</li>
+<li>fugitive
+</li>
+<li>ctrlp
+</li>
+</ul>
+</li>
+<li>pkg<sub>mgmt</sub> pkgs:
+<ul class="org-ul">
+<li>vundler 
+</li>
+<li>pathogen
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li>
+
+
+
+<li>Browser Plugins<br  /><div class="outline-text-3" id="text-1-3">
+<ul class="org-ul">
+<li><a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en">jsonview</a>
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-js"><span style="color: #8c8c8c;">{</span>
+ <span style="color: #95e454;">"checks"</span>: <span style="color: #93a8c6;">{</span>
+     <span style="color: #95e454;">"memory"</span>: <span style="color: #b0b1a3;">{</span>
+         <span style="color: #95e454;">"handlers"</span>: <span style="color: #97b098;">[</span><span style="color: #95e454;">"mailer"</span><span style="color: #97b098;">]</span>,
+         <span style="color: #95e454;">"command"</span>: <span style="color: #95e454;">"check_disk.rb -w 80 -c 90"</span>,
+         <span style="color: #95e454;">"interval"</span>: <span style="color: #e5786d;">5</span>,
+         <span style="color: #95e454;">"severities"</span>: <span style="color: #97b098;">[</span><span style="color: #95e454;">"critical"</span>,<span style="color: #95e454;">"warning"</span><span style="color: #97b098;">]</span>,
+         <span style="color: #95e454;">"subscribers"</span>: <span style="color: #97b098;">[</span><span style="color: #95e454;">"core"</span><span style="color: #97b098;">]</span>,
+         <span style="color: #95e454;">"refresh"</span>: <span style="color: #e5786d;">900</span>
+     <span style="color: #b0b1a3;">}</span>
+ <span style="color: #93a8c6;">}</span>
+<span style="color: #8c8c8c;">}</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en">vimium</a>
+</li>
+<li><a href="https://github.com/mooz/keysnail/wiki">keysnail</a> + plugins: tanything
+</li>
+</ul>
+</div>
+</li>
+
+
+<li>TIPS/TRICKS<br  /><div class="outline-text-3" id="text-1-4">
+<ul class="org-ul">
+<li>gist
+</li>
+<li>picpaste
+</li>
+<li></li>
+</ul>
+
+
+
+<ul class="org-ul">
+<li>picpaste
+
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #99968b;"># </span><span style="color: #99968b;">http://www.picpaste.com/ :Put your pictures online, easy and quick</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">Storage time: 30mins(1) to unlimited(9)</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">Supported formats: Only JP(E)G, PNG, GIF, BMP</span>
+<span style="color: #99968b;"># </span><span style="color: #99968b;">Size limit =&lt; 7 megabyte </span>
+<span style="color: #cae682;">picpaste</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">{</span>
+ <span style="color: #cae682;">opts</span>=<span style="color: #93a8c6;">(</span> -F <span style="color: #cae682;">storetime</span>=<span style="color: #e5786d;">1</span> -F <span style="color: #cae682;">addprivacy</span>=<span style="color: #e5786d;">1</span> -F <span style="color: #cae682;">rules</span>=yes <span style="color: #93a8c6;">)</span>
+ <span style="color: #cae682;">link</span>=http://www.picpaste.com/upload.php
+ curl -sA firefox <span style="color: #95e454;">"${opts[@]}"</span> -F <span style="color: #cae682;">upload</span>=@<span style="color: #95e454;">"$1"</span> <span style="color: #95e454;">"$link"</span> <span style="color: #95e454;">\</span>
+    | sed -n <span style="color: #95e454;">'/Picture URL/{n;s/.*"&gt;//;s/&lt;.*//p}'</span>
+<span style="color: #8c8c8c;">}</span>
+</pre>
+</div>
+</li>
+
+<li><a href="https://github.com/defunkt/gist">gist</a>
+
+<p>
+The gist gem provides a gist command that you can use from your terminal to upload content to <a href="https://gist.github.com/">https://gist.github.com/</a>.
+</p>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ gem install gist          <span style="color: #99968b;">#</span><span style="color: #99968b;">installing gist</span>
+$ gist -Pp -f filname.rb    <span style="color: #99968b;">#</span><span style="color: #99968b;">private gist from clipboard</span>
+$ gist --login                   <span style="color: #99968b;">#</span><span style="color: #99968b;">to login to github</span>
+$ gist -h                   <span style="color: #99968b;">#</span><span style="color: #99968b;">further exploration</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>local server to share secure credentials
+
+<p>
+my personal favorites
+</p>
+<ul class="org-ul">
+<li>need to share your aws export to your friend
+<pre class="example">
+env| grep -i aws | nc -l 1234
+</pre>
+</li>
+
+<li>history search with ease
+
+<ul class="org-ul">
+<li>make an alias <b>hist</b>
+</li>
+</ul>
+<pre class="example">
+alias hist='history | grep $1'
+</pre>
+<ul class="org-ul">
+<li>Eg: forgot your old crontab command ??
+
+<pre class="example">
+$ hist crontab
+
+7857  crontab -e
+8478  cfssh my-prod-serverXY2 -l deploy 'crontab -l'
+9577  crontab -l
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</li></ul>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: Thursday, Aug 06 2015</p>
+<p class="email">Email: <a href="mailto:milan@cloudfactory.com">milan@cloudfactory.com</a>, <a href="mailto:iksha@cloudfactory.com">iksha@cloudfactory.com</a></p>
+<p class="date">Created: 2015-08-06 Thu 07:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

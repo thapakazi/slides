@@ -1,0 +1,166 @@
+#+TITLE: Being Productive
+#+DESCRIPTION: Lunch and Learn @cloudfactory on Thu Aug 6 2015
+#+DATE: Thursday, Aug 06 2015
+#+EMAIL: milan@cloudfactory.com, iksha@cloudfactory.com
+#+STARTUP: content inlineimages
+#+OPTIONS: num:nil toc:nil H:1 creator:nil author:nil email:t
+
+* CONTENTS:
+   - tmux & tmuxinator 
+   - vi [presenter: [[http://github.com/xha003/][xhagrg]]]
+   - brower plugins
+   - shell-tips/tricks
+** TMUX/TMUXINATOR
+*** TMUX
+  + use-case:
+    - iTerm2 startup in early morning 
+       *...will be show in demo*
+    - watching over irritating logs on server
+    - tired of screen-process #hard to collaborate
+
+  + intro:
+   #+CAPTION: Tmux Readme
+   #+NAME:   fig:tmux-intro
+     [[./tmux-readme.png]]
+
+  + tmux in action:
+   #+CAPTION: Tmux in action
+   #+NAME:   fig:tmux-in-action
+     [[./tmux-in-action.png]]
+
+*** TMUXINATOR
+
+    its a *gem* to manage the tmux session
++ step1: installtion
+
+    #+BEGIN_EXAMPLE
+    gem install tmuxinator
+    #+END_EXAMPLE
+    
++ step2: configuration
+      
+    #+BEGIN_EXAMPLE
+    $ export $EDITOR=your_awesome_editor
+    $ mux new your_awesome_project_name  #yamal config generated at ~/.tmuxinator/
+    #+END_EXAMPLE
+
++ step3: run
+    #+BEGIN_EXAMPLE
+    $ mux your_awesome_project_name
+    #+END_EXAMPLE
+   
++ [[http://showterm.io/0cae8fa10041acea1a311][demo:]]
+  <iframe src="http://showterm.io/0cae8fa10041acea1a311#fast" width="640" height="480"></iframe> 
+
++ Extra for *iTerm* Users
+
+  first detatch **ctrl+a d** and:
+  #+BEGIN_EXAMPLE
+  $ tmux ls
+  $ tmux -CC attach -t session_name
+  #+END_EXAMPLE
+
+** VI
+
+    - modal editing of file, 
+       Eg: w for word; who needs to remember that
+    
+    #+BEGIN_EXAMPLE
+    - self.quit()  
+        reason: me eamcs aficionado   
+    #+END_EXAMPLE
+    - vim & packages
+      - vim: improved vi
+      - pkgs: 
+        - nerdtree
+        - fugitive
+        - ctrlp
+      - pkg_mgmt pkgs:
+        - vundler 
+        - pathogen
+        
+
+
+** Browser Plugins
+   - [[https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en][jsonview]]
+     
+   #+BEGIN_SRC js
+   {
+    "checks": {
+        "memory": {
+            "handlers": ["mailer"],
+            "command": "check_disk.rb -w 80 -c 90",
+            "interval": 5,
+            "severities": ["critical","warning"],
+            "subscribers": ["core"],
+            "refresh": 900
+        }
+    }
+   }
+   #+END_SRC
+
+   - [[https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en][vimium]]
+   - [[https://github.com/mooz/keysnail/wiki][keysnail]] + plugins: tanything
+
+
+** TIPS/TRICKS
+    - gist
+    - picpaste
+    - 
+
+
+
++ picpaste
+  
+  #+BEGIN_SRC sh
+  # http://www.picpaste.com/ :Put your pictures online, easy and quick
+  # Storage time: 30mins(1) to unlimited(9)
+  # Supported formats: Only JP(E)G, PNG, GIF, BMP
+  # Size limit =< 7 megabyte 
+  picpaste () {
+   opts=( -F storetime=1 -F addprivacy=1 -F rules=yes )
+   link=http://www.picpaste.com/upload.php
+   curl -sA firefox "${opts[@]}" -F upload=@"$1" "$link" \
+      | sed -n '/Picture URL/{n;s/.*">//;s/<.*//p}'
+  }
+  #+END_SRC
+
+- [[https://github.com/defunkt/gist][gist]]
+  
+  The gist gem provides a gist command that you can use from your terminal to upload content to https://gist.github.com/.
+#+BEGIN_SRC sh
+$ gem install gist          #installing gist
+$ gist -Pp -f filname.rb    #private gist from clipboard
+$ gist --login                   #to login to github
+$ gist -h                   #further exploration
+#+END_SRC
+
+- local server to share secure credentials
+
+ my personal favorites
+  + need to share your aws export to your friend
+    #+BEGIN_EXAMPLE
+    env| grep -i aws | nc -l 1234
+    #+END_EXAMPLE
+
+  + history search with ease
+    
+    - make an alias *hist*
+    #+BEGIN_EXAMPLE
+     alias hist='history | grep $1'
+    #+END_EXAMPLE
+    - Eg: forgot your old crontab command ??
+      
+     #+BEGIN_EXAMPLE
+       $ hist crontab
+    
+       7857  crontab -e
+       8478  cfssh my-prod-serverXY2 -l deploy 'crontab -l'
+       9577  crontab -l
+
+
+     #+END_EXAMPLE
+
+
+
+
