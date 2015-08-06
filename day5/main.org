@@ -5,6 +5,7 @@
 #+STARTUP: content inlineimages
 #+OPTIONS: num:nil toc:nil H:1 creator:nil author:nil email:t
 
+[[./lazy-ninja.gif]]
 * CONTENTS:
    - tmux & tmuxinator 
    - vi [presenter: [[http://github.com/xha003/][xhagrg]]]
@@ -103,7 +104,9 @@
 
 ** TIPS/TRICKS
 
-+ picpaste
++ picpaste 
+
+  motivation: share local image with at go
   
   #+BEGIN_SRC sh
   # http://www.picpaste.com/ :Put your pictures online, easy and quick
@@ -174,9 +177,21 @@
        #+BEGIN_SRC sh
        less ~/app/logs/production.log #use it like readonly mode of vi
        #+END_SRC
+    - kill the tmux session
+       #+BEGIN_EXAMPLE
+       tmux ls  # list the running session                              
+       tmux kill-session -t my_session_name  #kill the session
+       #+END_EXAMPLE
 
 
-+ More awesome stuffs
-  - [[bonus: http://git.io/vqfT9][github:jlevy/the-art-of-command-line]]
+
++ More awesome stuffs/ Refrences
+  - [[http://git.io/vqfT9][the-art-of-command-line]]
+  - vim configs [[https://github.com/xha003/config_files][xha]]
+  - [[http://uploads.mitechie.com/books/tmux_p1_1.pdf][tmux: Productive Mouse-Free Development]] (found@google)
+  - [[http://www.railsonmaui.com/blog/2014/03/11/rocking-with-tmux-tmuxinator-and-iterm2-for-rails-development/][Rocking With Tmux, Tmuxinator, Guard, Zeus, and iTerm2 for Rails Development]]
+   
+
+
 
    

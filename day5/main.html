@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Being Productive</title>
-<!-- 2015-08-06 Thu 10:04 -->
+<!-- 2015-08-06 Thu 10:26 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="description" content="Lunch and Learn @cloudfactory on Thu Aug 6 2015"
@@ -140,6 +140,10 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Being Productive</h1>
 
+<div class="figure">
+<p><img src="./lazy-ninja.gif" alt="lazy-ninja.gif" />
+</p>
+</div>
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1">CONTENTS:</h2>
 <div class="outline-text-2" id="text-1">
@@ -173,7 +177,7 @@ for the JavaScript code in this tag.
 <div id="fig:tmux-intro" class="figure">
 <p><img src="./tmux-readme.png" alt="tmux-readme.png" />
 </p>
-<p><span class="figure-number">Figure 1:</span> Tmux Readme</p>
+<p><span class="figure-number">Figure 2:</span> Tmux Readme</p>
 </div>
 </li>
 
@@ -182,7 +186,7 @@ for the JavaScript code in this tag.
 <div id="fig:tmux-in-action" class="figure">
 <p><img src="./tmux-in-action.png" alt="tmux-in-action.png" />
 </p>
-<p><span class="figure-number">Figure 2:</span> Tmux in action</p>
+<p><span class="figure-number">Figure 3:</span> Tmux in action</p>
 </div>
 </li>
 </ul>
@@ -307,7 +311,11 @@ Eg: w for word; who needs to remember that
 
 <li>TIPS/TRICKS<br  /><div class="outline-text-3" id="text-1-4">
 <ul class="org-ul">
-<li>picpaste
+<li>picpaste 
+
+<p>
+motivation: share local image with at go
+</p>
 
 <div class="org-src-container">
 
@@ -405,6 +413,12 @@ pkill -STOP sidekiq     # stop the sidkiq process
 </pre>
 </div>
 </li>
+<li>kill the tmux session
+<pre class="example">
+tmux ls  # list the running session                              
+tmux kill-session -t my_session_name  #kill the session
+</pre>
+</li>
 </ul>
 </li>
 </ul>
@@ -412,10 +426,17 @@ pkill -STOP sidekiq     # stop the sidkiq process
 </ul>
 
 
+
 <ul class="org-ul">
-<li>More awesome stuffs
+<li>More awesome stuffs/ Refrences
 <ul class="org-ul">
-<li><a href="http://git.io/vqfT9">github:jlevy/the-art-of-command-line</a>
+<li><a href="http://git.io/vqfT9">the-art-of-command-line</a>
+</li>
+<li>vim configs <a href="https://github.com/xha003/config_files">xha</a>
+</li>
+<li><a href="http://uploads.mitechie.com/books/tmux_p1_1.pdf">tmux: Productive Mouse-Free Development</a> (found@google)
+</li>
+<li><a href="http://www.railsonmaui.com/blog/2014/03/11/rocking-with-tmux-tmuxinator-and-iterm2-for-rails-development/">Rocking With Tmux, Tmuxinator, Guard, Zeus, and iTerm2 for Rails Development</a>
 </li>
 </ul>
 </li>
@@ -427,7 +448,7 @@ pkill -STOP sidekiq     # stop the sidkiq process
 <div id="postamble" class="status">
 <p class="date">Date: Thursday, Aug 06 2015</p>
 <p class="email">Email: <a href="mailto:iksha@cloudfactory.com">iksha@cloudfactory.com</a>, <a href="mailto:milan@cloudfactory.com">milan@cloudfactory.com</a></p>
-<p class="date">Created: 2015-08-06 Thu 10:04</p>
+<p class="date">Created: 2015-08-06 Thu 10:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
