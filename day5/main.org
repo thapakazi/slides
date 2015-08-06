@@ -1,7 +1,7 @@
 #+TITLE: Being Productive
 #+DESCRIPTION: Lunch and Learn @cloudfactory on Thu Aug 6 2015
 #+DATE: Thursday, Aug 06 2015
-#+EMAIL: milan@cloudfactory.com, iksha@cloudfactory.com
+#+EMAIL: iksha@cloudfactory.com, milan@cloudfactory.com
 #+STARTUP: content inlineimages
 #+OPTIONS: num:nil toc:nil H:1 creator:nil author:nil email:t
 
@@ -50,7 +50,6 @@
     #+END_EXAMPLE
    
 + [[http://showterm.io/0cae8fa10041acea1a311][demo:]]
-  <iframe src="http://showterm.io/0cae8fa10041acea1a311#fast" width="640" height="480"></iframe> 
 
 + Extra for *iTerm* Users
 
@@ -83,8 +82,7 @@
 
 ** Browser Plugins
    - [[https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en][jsonview]]
-     
-   #+BEGIN_SRC js
+      #+BEGIN_SRC js
    {
     "checks": {
         "memory": {
@@ -100,15 +98,10 @@
    #+END_SRC
 
    - [[https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en][vimium]]
-   - [[https://github.com/mooz/keysnail/wiki][keysnail]] + plugins: tanything
+   - [[https://github.com/mooz/keysnail/wiki][keysnail]] (for firefox users like me :D)
 
 
 ** TIPS/TRICKS
-    - gist
-    - picpaste
-    - 
-
-
 
 + picpaste
   
@@ -125,32 +118,29 @@
   }
   #+END_SRC
 
-- [[https://github.com/defunkt/gist][gist]]
++ [[https://github.com/defunkt/gist][gist]]
   
   The gist gem provides a gist command that you can use from your terminal to upload content to https://gist.github.com/.
-#+BEGIN_SRC sh
-$ gem install gist          #installing gist
-$ gist -Pp -f filname.rb    #private gist from clipboard
-$ gist --login                   #to login to github
-$ gist -h                   #further exploration
-#+END_SRC
+   #+BEGIN_SRC sh
+   $ gem install gist          #installing gist
+   $ gist -Pp -f filname.rb    #private gist from clipboard
+   $ gist --login                   #to login to github
+   $ gist -h                   #further exploration
+   #+END_SRC
 
-- local server to share secure credentials
-
- my personal favorites
++ my personal favorites
   + need to share your aws export to your friend
     #+BEGIN_EXAMPLE
-    env| grep -i aws | nc -l 1234
+    env| grep -i aws | nc -l 1234 #then give http://your.192.168.ip:1234 to your friend
     #+END_EXAMPLE
 
   + history search with ease
     
     - make an alias *hist*
-    #+BEGIN_EXAMPLE
-     alias hist='history | grep $1'
-    #+END_EXAMPLE
+      #+BEGIN_EXAMPLE
+      alias hist='history | grep $1' #merge of grep and history
+      #+END_EXAMPLE
     - Eg: forgot your old crontab command ??
-      
      #+BEGIN_EXAMPLE
        $ hist crontab
     
@@ -160,7 +150,33 @@ $ gist -h                   #further exploration
 
 
      #+END_EXAMPLE
+  + नेट लास्टै slow छ हो ??
+    #+BEGIN_SRC
+    mtr -n github.com
+    #+END_SRC
+  + tired of ps aux|grep sidekiq && kill -9 XXXX
+    #+BEGIN_SRC
+    pgrep -fil sidekiq      # to know your process
+    pkill -STOP sidekiq     # stop the sidkiq process
+    #+END_SRC
+    *DISCLAIMER*: DON'T TRY IT IN +HOME+ PRODUCTION
+
+  + etc
+    - helper function
+      #+BEGIN_SRC sh
+      mkcd () {  mkdir "$1";cd "$1"}  #make dir and enter inside at one go
+      #+END_SRC
+    - managing multiple aws keys
+      #+BEGIN_SRC sh
+      source ~/.my_aws_keys_for && run deployment syntax
+      #+END_SRC
+    - less is more
+       #+BEGIN_SRC sh
+       less ~/app/logs/production.log #use it like readonly mode of vi
+       #+END_SRC
 
 
++ More awesome stuffs
+  - [[bonus: http://git.io/vqfT9][github:jlevy/the-art-of-command-line]]
 
-
+   

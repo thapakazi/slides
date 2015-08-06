@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Being Productive</title>
-<!-- 2015-08-06 Thu 07:51 -->
+<!-- 2015-08-06 Thu 10:04 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="description" content="Lunch and Learn @cloudfactory on Thu Aug 6 2015"
@@ -216,7 +216,6 @@ $ mux your_awesome_project_name
 </li>
 
 <li><a href="http://showterm.io/0cae8fa10041acea1a311">demo:</a>
-  &lt;iframe src="<a href="http://showterm.io/0cae8fa10041acea1a311#fast">http://showterm.io/0cae8fa10041acea1a311#fast</a>" width="640" height="480"&gt;&lt;/iframe&gt; 
 </li>
 
 <li>Extra for <b>iTerm</b> Users
@@ -279,9 +278,6 @@ Eg: w for word; who needs to remember that
 <li>Browser Plugins<br  /><div class="outline-text-3" id="text-1-3">
 <ul class="org-ul">
 <li><a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en">jsonview</a>
-</li>
-</ul>
-
 <div class="org-src-container">
 
 <pre class="src src-js"><span style="color: #8c8c8c;">{</span>
@@ -298,11 +294,11 @@ Eg: w for word; who needs to remember that
 <span style="color: #8c8c8c;">}</span>
 </pre>
 </div>
+</li>
 
-<ul class="org-ul">
 <li><a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en">vimium</a>
 </li>
-<li><a href="https://github.com/mooz/keysnail/wiki">keysnail</a> + plugins: tanything
+<li><a href="https://github.com/mooz/keysnail/wiki">keysnail</a> (for firefox users like me :D)
 </li>
 </ul>
 </div>
@@ -310,16 +306,6 @@ Eg: w for word; who needs to remember that
 
 
 <li>TIPS/TRICKS<br  /><div class="outline-text-3" id="text-1-4">
-<ul class="org-ul">
-<li>gist
-</li>
-<li>picpaste
-</li>
-<li></li>
-</ul>
-
-
-
 <ul class="org-ul">
 <li>picpaste
 
@@ -344,8 +330,6 @@ Eg: w for word; who needs to remember that
 <p>
 The gist gem provides a gist command that you can use from your terminal to upload content to <a href="https://gist.github.com/">https://gist.github.com/</a>.
 </p>
-</li>
-</ul>
 <div class="org-src-container">
 
 <pre class="src src-sh">$ gem install gist          <span style="color: #99968b;">#</span><span style="color: #99968b;">installing gist</span>
@@ -354,17 +338,13 @@ $ gist --login                   <span style="color: #99968b;">#</span><span sty
 $ gist -h                   <span style="color: #99968b;">#</span><span style="color: #99968b;">further exploration</span>
 </pre>
 </div>
+</li>
 
-<ul class="org-ul">
-<li>local server to share secure credentials
-
-<p>
-my personal favorites
-</p>
+<li>my personal favorites
 <ul class="org-ul">
 <li>need to share your aws export to your friend
 <pre class="example">
-env| grep -i aws | nc -l 1234
+env| grep -i aws | nc -l 1234 #then give http://your.192.168.ip:1234 to your friend
 </pre>
 </li>
 
@@ -372,14 +352,11 @@ env| grep -i aws | nc -l 1234
 
 <ul class="org-ul">
 <li>make an alias <b>hist</b>
-</li>
-</ul>
 <pre class="example">
-alias hist='history | grep $1'
+alias hist='history | grep $1' #merge of grep and history
 </pre>
-<ul class="org-ul">
+</li>
 <li>Eg: forgot your old crontab command ??
-
 <pre class="example">
 $ hist crontab
 
@@ -390,6 +367,56 @@ $ hist crontab
 </li>
 </ul>
 </li>
+<li>नेट लास्टै slow छ हो ??
+<pre class="example">
+mtr -n github.com
+</pre>
+</li>
+<li>tired of ps aux|grep sidekiq &amp;&amp; kill -9 XXXX
+<pre class="example">
+pgrep -fil sidekiq      # to know your process
+pkill -STOP sidekiq     # stop the sidkiq process
+</pre>
+<p>
+<b>DISCLAIMER</b>: DON'T TRY IT IN <del>HOME</del> PRODUCTION
+</p>
+</li>
+
+<li>etc
+<ul class="org-ul">
+<li>helper function
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #cae682;">mkcd</span> <span style="color: #8c8c8c;">()</span> <span style="color: #8c8c8c;">{</span>  mkdir <span style="color: #95e454;">"$1"</span>;<span style="color: #e5786d;">cd</span> <span style="color: #95e454;">"$1"</span><span style="color: #8c8c8c;">}</span>  <span style="color: #99968b;">#</span><span style="color: #99968b;">make dir and enter inside at one go</span>
+</pre>
+</div>
+</li>
+<li>managing multiple aws keys
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="color: #e5786d;">source</span> ~/.my_aws_keys_for &amp;&amp; run deployment syntax
+</pre>
+</div>
+</li>
+<li>less is more
+<div class="org-src-container">
+
+<pre class="src src-sh">less ~/app/logs/production.log <span style="color: #99968b;">#</span><span style="color: #99968b;">use it like readonly mode of vi</span>
+</pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>More awesome stuffs
+<ul class="org-ul">
+<li><a href="http://git.io/vqfT9">github:jlevy/the-art-of-command-line</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -399,8 +426,8 @@ $ hist crontab
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: Thursday, Aug 06 2015</p>
-<p class="email">Email: <a href="mailto:milan@cloudfactory.com">milan@cloudfactory.com</a>, <a href="mailto:iksha@cloudfactory.com">iksha@cloudfactory.com</a></p>
-<p class="date">Created: 2015-08-06 Thu 07:51</p>
+<p class="email">Email: <a href="mailto:iksha@cloudfactory.com">iksha@cloudfactory.com</a>, <a href="mailto:milan@cloudfactory.com">milan@cloudfactory.com</a></p>
+<p class="date">Created: 2015-08-06 Thu 10:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

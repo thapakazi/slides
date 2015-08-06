@@ -4,13 +4,15 @@
 #+STARTUP: showall
 
 ** this includes following:
-  |-------------+-----------------+-----------------------+--------------------|
-  | topic       | date            | Remarks               | includes           |
-  |-------------+-----------------+-----------------------+--------------------|
-  | ShellBasics | Thu 19 Feb 2015 | Becoming a ShellAngel | Basic Introduction |
-  |             |                 |                       |                    |
+  |-----------------+-----------------+-----------------------+-----------------------------|
+  | topic           | date            | Remarks               | includes                    |
+  |-----------------+-----------------+-----------------------+-----------------------------|
+  | ShellBasics     | Thu 19 Feb 2015 | Becoming a ShellAngel | Basic Introduction          |
+  | BeingProductive | Thu 06 Aug 2015 | Lunch & Learn [[http://github.com/sprout/][@cf]]     | tmux{inator},vi,tips/tricks |
+
 
 *Credits to Respective people:*
   - who's provide images/gifs/stuffs on google 
   - who support
-   
+
+
