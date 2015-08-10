@@ -41,7 +41,7 @@
 + step2: configuration
       
     #+BEGIN_EXAMPLE
-    $ export $EDITOR=your_awesome_editor
+    $ export EDITOR=your_awesome_editor
     $ mux new your_awesome_project_name  #yaml config generated at ~/.tmuxinator/
     #+END_EXAMPLE
 
