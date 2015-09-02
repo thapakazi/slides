@@ -132,9 +132,13 @@
    #+END_SRC
 
 + my personal favorites
-  + need to share your aws export to your friend
+  + need to share your aws export to your friend 
     #+BEGIN_EXAMPLE
-    env| grep -i aws | nc -l 1234 #then give http://your.192.168.ip:1234 to your friend
+    env| grep -i aws | nc -l -p 1234  # dont use -p options *Mac USERS*
+    
+     #then give http://your.192.168.ip:1234 to your friend
+     # or ask him to takt it from nc form his/her terminal like:
+     nc 192.168.ip.ip 1234
     #+END_EXAMPLE
 
   + history search with ease
