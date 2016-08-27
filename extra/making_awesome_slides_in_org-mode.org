@@ -4,6 +4,8 @@
 #+OPTIONS: num:nil toc:1
 #+STARTUP: content
 
+#+REVEAL_ROOT:  ../assets/reveal.js
+
 * Before you begin
   #+BEGIN_QUOTE
   you have been warned, do try this at home 😁
