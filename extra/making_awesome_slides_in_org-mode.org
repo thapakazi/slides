@@ -1,0 +1,114 @@
+#+TITLE: Making Awesome Slides with org-reveal 
+#+DATE: Saturday, Aug 27 2016
+#+DESCRIPTION: this is about how to create awesome slide, step-by-step
+#+OPTIONS: num:nil toc:1
+#+STARTUP: content
+
+* Before you begin
+  #+BEGIN_QUOTE
+  you have been warned, do try this at home 😁
+  #+END_QUOTE
+** Requirements and Installation -copied
+   Make sure you have these first 🍒. I will show how in next slide.
+    * Org-mode & ox-reveal.el
+    * Reveal.js. (optional, we can use direct from web, I prefer local
+      version)
+    * htmlize.el (optional, for syntax highlighting).
+    * And, of course, emacs.
+** How to get it in my EMACS
+   #+ATTR_REVEAL: :frag fade-out
+   #+BEGIN_QUOTE
+   simplified config from [[http://cestlaz.github.io/posts/using-emacs-11-reveal/][Mike Zamansky]] and this [[https://www.youtube.com/watch?v=psDpCpcIVYs][video]]. #reviewlater
+   #+END_QUOTE
+   #+ATTR_REVEAL: :frag grow
+   #+BEGIN_SRC emacs-lisp
+(use-package ox-reveal
+  :ensure ox-reveal)
+
+(setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+(setq org-reveal-mathjax t)
+
+(use-package htmlize
+  :ensure t)
+    #+END_SRC
+
+** How to export
+  
+   Its easy, just like normal org-exports.
+  
+   #+BEGIN_EXAMPLE
+   C-c C-e R B - export to html and browse
+   C-c C-e R S - export a section to html, but not browse 😠
+   #+END_EXAMPLE
+      
+* Using REVEAL wild 😉
+** using themes
+   #+REVEAL_THEME: league
+   using awesome [[https://github.com/hakimel/reveal.js/#theming][themes]]:
+   {black|white|league|beige|sky|night|serif|simple|solarized}
+   #+BEGIN_SRC org
+   ,#+REVEAL_THEME: league
+   #+END_SRC
+
+** using local reveal setup
+
+   Reveal PATH can be configured in 2 ways:
+   - using a variable
+     #+BEGIN_SRC org
+     ,#+REVEAL_ROOT:  ../assets/reveal.js
+     #+END_SRC
+   - or via seting it via emacs config
+     #+BEGIN_SRC emacs-lisp
+     ;; Using directly from cdn
+     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+
+     ;;;; or using local copy
+     ;; (setq org-reveal-root "file://path/to/reveal.js/3.0.0/")
+     #+END_SRC
+
+** code highlight 
+   need to get ~htmlize~ package
+   #+BEGIN_SRC emacs-lisp
+   (use-package htmlize
+  :ensure t)
+   #+END_SRC
+   Instead we can use hightlight.js #exploreyourself 🚶
+
+** getting more with less; lets use options
+   #+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+   #+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+
+   #+BEGIN_SRC org
+   ,#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+   ,#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+   #+END_SRC
+
+*** COMMENT COMMENTED   
+   #+OPTIONS: reveal_width:1200 reveal_height:800
+   #+REVEAL_TRANS: cube
+   #+REVEAL_PLUGINS: (markdown notes)
+
+   #+REVEAL_MARGIN: 0.1
+   #+REVEAL_MIN_SCALE: 0.5
+   #+REVEAL_MAX_SCALE: 2.5
+
+   #+REVEAL_POSTAMBLE: <p> Created by zerOnepal </p>
+   
+** listing stuffs like a boss 
+   what about some bullets animations
+   #+BEGIN_SRC sh
+   ,#+ATTR_REVEAL: :frag (grow shrink highlight-green highlight-blue highlight-red roll-in)
+   #+END_SRC
+
+   So far we have covered these:
+   #+ATTR_REVEAL: :frag (grow shrink highlight-green highlight-blue highlight-red roll-in)
+   - how to install ox-reveal
+   - how to get export the slide
+   - using awesome themes
+   - highlight example codes
+   - using options for more
+   - using list fragment styles
+     
+* There is more
+   Org Reveal Example: https://raw.githubusercontent.com/yjwen/org-reveal/master/Readme.org
+

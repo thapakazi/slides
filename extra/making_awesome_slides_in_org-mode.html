@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Making Awesome Slides with org-reveal</title>
+<meta name="author" content="(Milan Thapa)"/>
+<meta name="description" content="this is about how to create awesome slide, step-by-step"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/league.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Making Awesome Slides with org-reveal</h1><h2 class="author">Milan Thapa</h2><h2 class="date">Saturday, Aug 27 2016</h2><p class="date">Created: 2016-08-27 Sat 18:38</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgheadline4">Before you begin</a></li>
+<li><a href="#/slide-orgheadline10">Using REVEAL wild 😉</a></li>
+<li><a href="#/slide-orgheadline11">There is more</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4">Before you begin</h2>
+<blockquote nil>
+<p>
+you have been warned, do try this at home 😁
+</p>
+</blockquote>
+</section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Requirements and Installation -copied</h3>
+<p>
+Make sure you have these first 🍒. I will show how in next slide.
+</p>
+<ul>
+<li>Org-mode &amp; ox-reveal.el</li>
+<li>Reveal.js. (optional, we can use direct from web, I prefer local
+version)</li>
+<li>htmlize.el (optional, for syntax highlighting).</li>
+<li>And, of course, emacs.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">How to get it in my EMACS</h3>
+<blockquote  class="fragment fade-out">
+<p>
+simplified config from <a href="http://cestlaz.github.io/posts/using-emacs-11-reveal/">Mike Zamansky</a> and this <a href="https://www.youtube.com/watch?v=psDpCpcIVYs">video</a>. #reviewlater
+</p>
+</blockquote>
+<div class="org-src-container">
+
+<pre  class="fragment grow">(<span style="color: #8ac6f2; font-weight: bold;">use-package</span> <span style="color: #e5786d;">ox-reveal</span>
+  <span style="color: #e5786d;">:ensure</span> ox-reveal)
+
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> org-reveal-root <span style="color: #95e454;">"http://cdn.jsdelivr.net/reveal.js/3.0.0/"</span>)
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> org-reveal-mathjax t)
+
+(<span style="color: #8ac6f2; font-weight: bold;">use-package</span> <span style="color: #e5786d;">htmlize</span>
+  <span style="color: #e5786d;">:ensure</span> t)
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">How to export</h3>
+<p>
+Its easy, just like normal org-exports.
+</p>
+
+<pre class="example">
+C-c C-e R B - export to html and browse
+C-c C-e R S - export a section to html, but not browse 😠
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">Using REVEAL wild 😉</h2>
+<div class="outline-text-2" id="text-orgheadline10">
+</div></section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">using themes</h3>
+<p>
+using awesome <a href="https://github.com/hakimel/reveal.js/#theming">themes</a>:
+{black|white|league|beige|sky|night|serif|simple|solarized}
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-org"><span style="color: #99968b;">#+REVEAL_THEME: league</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">using local reveal setup</h3>
+<p>
+Reveal PATH can be configured in 2 ways:
+</p>
+<ul>
+<li><p>
+using a variable
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-org"><span style="color: #99968b;">#+REVEAL_ROOT:  ../assets/reveal.js</span>
+</pre>
+</div></li>
+<li><p>
+or via seting it via emacs config
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><span style="color: #99968b;">;; </span><span style="color: #99968b;">Using directly from cdn</span>
+(<span style="color: #8ac6f2; font-weight: bold;">setq</span> org-reveal-root <span style="color: #95e454;">"http://cdn.jsdelivr.net/reveal.js/3.0.0/"</span>)
+
+<span style="color: #99968b;">;;;; </span><span style="color: #99968b;">or using local copy</span>
+<span style="color: #99968b;">;; </span><span style="color: #99968b;">(setq org-reveal-root "file://path/to/reveal.js/3.0.0/")</span>
+</pre>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">code highlight</h3>
+<p>
+need to get <code>htmlize</code> package
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp">   (<span style="color: #8ac6f2; font-weight: bold;">use-package</span> <span style="color: #e5786d;">htmlize</span>
+  <span style="color: #e5786d;">:ensure</span> t)
+</pre>
+</div>
+<p>
+Instead we can use hightlight.js #exploreyourself 🚶
+</p>
+
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">getting more with less; lets use options</h3>
+<div class="org-src-container">
+
+<pre  class="src src-org"><span style="color: #99968b;">#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t</span>
+<span style="color: #99968b;">#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil</span>
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">listing stuffs like a boss</h3>
+<p>
+what about some bullets animations
+</p>
+<div class="org-src-container">
+
+<pre  class="src src-sh"><span style="color: #99968b;">#</span><span style="color: #99968b;">+ATTR_REVEAL: :frag (grow shrink highlight-green highlight-blue highlight-red roll-in)</span>
+</pre>
+</div>
+
+<p>
+So far we have covered these:
+</p>
+<ul>
+<li class="fragment grow">how to install ox-reveal</li>
+<li class="fragment shrink">how to get export the slide</li>
+<li class="fragment highlight-green">using awesome themes</li>
+<li class="fragment highlight-blue">highlight example codes</li>
+<li class="fragment highlight-red">using options for more</li>
+<li class="fragment roll-in">using list fragment styles</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">There is more</h2>
+<p>
+Org Reveal Example: <a href="https://raw.githubusercontent.com/yjwen/org-reveal/master/Readme.org">https://raw.githubusercontent.com/yjwen/org-reveal/master/Readme.org</a>
+</p>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

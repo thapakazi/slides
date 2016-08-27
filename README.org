@@ -1,18 +1,25 @@
 #+TITLE: Slideszz
 #+DESCRIPTION: slides, mixed one
+#+STARTUP: content
 
-#+STARTUP: showall
+** New Sensation
+   Now there is reveal, it will be more fun, like 
+   
 
 ** this includes following:
-  |-----------------+-----------------+-----------------------+-----------------------------|
-  | topic           | date            | Remarks               | includes                    |
-  |-----------------+-----------------+-----------------------+-----------------------------|
-  | ShellBasics     | Thu 19 Feb 2015 | Becoming a ShellAngel | Basic Introduction          |
-  | BeingProductive | Thu 06 Aug 2015 | Lunch & Learn [[http://github.com/sprout/][@cf]]     | tmux{inator},vi,tips/tricks |
+  |-----------------+---------------------+--------------------------------+--------------------------------|
+  | topic           | date                | Remarks                        | includes                       |
+  |-----------------+---------------------+--------------------------------+--------------------------------|
+  | ShellBasics     | Thu 19 Feb 2015     | Becoming a ShellAngel          | Basic Introduction             |
+  | BeingProductive | Thu 06 Aug 2015     | Lunch & Learn @cf              | tmux{inator},vi,tips/tricks    |
+  | Awesome Slides  | Sat Aug 27 NTP 2016 | Creating Awesome Reveal in org | org-mode, ox-reveal, reveal.js |
+  |-----------------+---------------------+--------------------------------+--------------------------------|
+
+
 
 
 *Credits to Respective people:*
+  - who help me learn this all the things 🙇
   - who's provide images/gifs/stuffs on google 
   - who support
-
 

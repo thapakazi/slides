@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Becoming a Shellz Angel</title>
+<meta name="author" content="(Milan Thapa)"/>
+<meta name="description" content="Blinking Magick of Black and White World"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../assets/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="../assets/reveal.js/css/theme/night.css" id="theme"/>
+
+<link rel="stylesheet" href="../assets/reveal.js/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = '../assets/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-orgheadline1">
+<h2 id="orgheadline1">Today's Agenda</h2>
+<ul>
+<li class="fragment roll-in">Basic Commands</li>
+<li class="fragment roll-in">Understanding $_</li>
+<li class="fragment roll-in">Unix file structure</li>
+<li class="fragment roll-in">| &gt; &gt;&gt; &lt; `</li>
+<li class="fragment roll-in">Some advanced must know</li>
+<li class="fragment roll-in">Simple IQs of shell</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4">Quick Dive Into Commands</h2>
+<div class="outline-text-2" id="text-orgheadline4">
+</div></section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Basics</h3>
+<ul>
+<li class="fragment roll-in"><p>
+print current user id(name)
+</p>
+<div class="org-src-container">
+
+<pre><code class="sh" >whoami
+</code></pre>
+</div></li>
+<li class="fragment roll-in"><p>
+remove recursively and forcefully everything inside /tmp/logs   
+</p>
+<div class="org-src-container">
+
+<pre><code class="bash" >rm -rf /tmp/logs
+</code></pre>
+</div></li>
+<li class="fragment roll-in"><p>
+make script executable
+</p>
+<div class="org-src-container">
+
+<pre><code class="bash" >chmod +x myscript.sh
+</code></pre>
+</div></li>
+<li class="fragment roll-in"><p>
+changing the file ownership
+</p>
+<div class="org-src-container">
+
+<pre><code class="bash" >sudo chown username:group file_to_own
+</code></pre>
+</div></li>
+<li class="fragment roll-in"><p>
+get process information
+</p>
+<div class="org-src-container">
+
+<pre><code class="bash" > ps aux | grep sidekiq
+</code></pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">More than basics</h3>
+<div class="org-src-container">
+
+<pre><code class="sh" >  $ ssh deploy@cloudfactory.machine -v
+</code></pre>
+</div>
+<div class="org-src-container">
+
+<pre><code class="sh" >  $ scp -P 1234 -v output.csv root@192.168.1.1:/tmp/csvfiles/
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">Understanding prompt</h2>
+
+<div id="orgparagraph1" class="figure">
+<p><img src="../images/slide-unix-prompt.png" alt="slide-unix-prompt.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> basic unix prompt</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline6">
+<h2 id="orgheadline6">Unix File Structure</h2>
+
+<div id="orgparagraph2" class="figure">
+<p><img src="../images/file-structure.png" alt="file-structure.png" />
+</p>
+<p><span class="figure-number">Figure 2:</span> unix file system</p>
+</div>
+
+<p>
+In <b><b>ubuntu</b></b>: <b>/home/username</b> is home for user
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">pipes | , &lt;redirection&gt;&gt;, ticks`</h2>
+<p>
+<b>Pipes</b>: [command<sub>1</sub>] | [command<sub>2</sub>]
+</p>
+
+<p>
+output from <b>command<sub>1</sub></b> is input to <b>command<sub>2</sub></b>
+</p>
+<div class="org-src-container">
+
+<pre><code class="sh" >  # check if sidekiq is running
+  ps aux | grep sidekiq
+</code></pre>
+</div>
+<p>
+<b>Redirection</b>: [some<sub>script</sub>] &gt; output<sub>file</sub>
+</p>
+<div class="org-src-container">
+
+<pre><code class="sh" >  date > /tmp/date
+</code></pre>
+</div>
+
+
+<div id="orgparagraph3" class="figure">
+<p><img src="../images/slide-redirect.png" alt="slide-redirect.png" />
+</p>
+<p><span class="figure-number">Figure 3:</span> redirection out: '&gt;' overwrite, '&gt;&gt;' append &amp; '&lt;' redirect in</p>
+</div>
+
+<p>
+<b>Ticks</b>: [some<sub>script</sub>] `[other<sub>scirpt</sub>]`
+other<sub>script</sub> is executed before hand (first) and then some<sub>scirpt</sub> uses that.
+</p>
+<div class="org-src-container">
+
+<pre><code class="sh" >  ls -la `which python`
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline14">
+<h2 id="orgheadline14">Some useful stuffs</h2>
+<ul>
+<li>Everthings is a file</li>
+<li>CAsESeNSitiVE</li>
+<li>No output means Success</li>
+<li>Getting helps</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">Case Sensitive</h3>
+<p>
+<b>must remember this one</b>
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="sh" >$ rm -rf myData.txt
+$ rm -rf MyData.txt
+$ rm -rf mydata.txt
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Everythings is a file</h3>
+<ul>
+<li class="fragment roll-in">documents, folders,</li>
+<li class="fragment roll-in">hardwares: hard-drive,</li>
+<li class="fragment roll-in">io devices: keyboard, printer</li>
+<li class="fragment roll-in">network communication: network-socketsl</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Understanding permission</h3>
+
+<div id="orgparagraph4" class="figure">
+<p><img src="../images/perms1.png" alt="perms1.png" />
+</p>
+<p><span class="figure-number">Figure 4:</span> file permission on linux(unix)</p>
+</div>
+
+<div id="orgparagraph5" class="figure">
+<p><img src="../images/perms2.png" alt="perms2.png" />
+</p>
+<p><span class="figure-number">Figure 5:</span> file permission described</p>
+</div>
+
+</section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Unix is terse</h3>
+<ul>
+<li class="fragment highlight-green">Generally no output after command indicates everythings gone ok;</li>
+<li class="fragment highlight-red">else errors</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Testing</h3>
+<ol>
+<li data-fragment-index="4" class="fragment grow">I will grow.</li>
+<li data-fragment-index="3" class="fragment shrink">I will shrink.</li>
+<li data-fragment-index="2" class="fragment roll-in">I rolled in 2nd.</li>
+<li data-fragment-index="1" class="fragment fade-out">I will fade out frist.</li>
+<li>I don't fragment</li>
+
+</ol>
+</section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">Getting Tools Installed</h3>
+<p>
+MacOS:
+<a href="http://brew.sh/">brew</a> [install] [package<sub>name</sub>] <a href="file:///home/thapakazi/Pictures/useful/linux/brew_install_wget.png">:like</a>
+</p>
+
+<p>
+Ubuntu:
+apt-get install [package<sub>name</sub>]
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline15">
+<h2 id="orgheadline15">Getting Help | try both | is inconsistent</h2>
+<div class="org-src-container">
+
+<pre><code class="sh" >      [command] --help  || [command] -h
+      Eg; cap --help
+      OR try:
+    man [command]
+   	command [help]
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline16">
+<h2 id="orgheadline16">QA</h2>
+
+<div id="orgparagraph6" class="figure">
+<p><img src="../images/owl-question.jpeg" alt="owl-question.jpeg" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../assets/reveal.js/lib/js/head.min.js"></script>
+<script src="../assets/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: false,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: '../assets/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

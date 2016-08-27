@@ -1,11 +1,20 @@
 #+TITLE: Becoming a Shellz Angel
 #+DATE: Tuesday, Feb 19 2015
 #+AUTHOR: Milan Thapa
+#+EMAIL: milans.thapa78@gmail.com
+
 #+STARTUP: showall
 #+DESCRIPTION: Blinking Magick of Black and White World
-#+OPTIONS: num:nil
+#+OPTIONS: num:nil toc:nil 
+#+OPTIONS: reveal_title_slide:nil reveal_slide_number:nil reveal_keyboard:t
+
+#+REVEAL_THEME: night
+#+REVEAL_PLUGINS: (highlight)
+#+REVEAL_ROOT:  ../assets/reveal.js
+#+REVEAL_TITLE_SLIDE_TEMPLATE: Becoming a Shellz Angel
 
 * Today's Agenda
+  #+ATTR_REVEAL: :frag (roll-in)
   - Basic Commands
   - Understanding $_
   - Unix file structure
@@ -13,30 +22,52 @@
   - Some advanced must know
   - Simple IQs of shell
 
-* Basic Commands
+* Quick Dive Into Commands
+** Basics
+  :LOGBOOK:
+  - Note taken on [2016-08-26 Fri 02:30] \\
+    Archieved:
+       - print all system information
+         #+BEGIN_SRC bash
+    	uname -a
+         #+END_SRC
+       - making nested folder at one go
+         #+BEGIN_SRC bash
+    	mkdir -p [some/nested/folder/you/want/to/create]   
+         #+END_SRC
+  :END:
+   #+ATTR_REVEAL: :frag (roll-in)
+   - print current user id(name)
+     #+BEGIN_SRC sh
+     whoami  
+     #+END_SRC
+   - remove recursively and forcefully everything inside /tmp/logs   
+     #+BEGIN_SRC bash
+     rm -rf /tmp/logs  
+     #+END_SRC
+   - make script executable
+     #+BEGIN_SRC bash
+     chmod +x myscript.sh
+     #+END_SRC
+   - changing the file ownership
+     #+BEGIN_SRC bash
+     sudo chown username:group file_to_own     
+     #+END_SRC
+   - get process information
+     #+BEGIN_SRC bash
+      ps aux | grep sidekiq
+     #+END_SRC
+** More than basics
    #+BEGIN_SRC sh
-	- whoami  # print user name
-
-	- uname -a   # print all system information
-
-	- mkdir -p [some/nested/folder/you/want/to/create]
-
-	- rm -rf /tmp/logs  # remove recursively and forcefully everything inside /tmp/logs
-
-	- chmod +x myscript.sh
-
-	- sudo chown username:group file_to_own
-
-	- ps aux | grep sidekiq
-	#+END_SRC
-
-* More than basics
-  #+BEGIN_SRC sh
   $ ssh deploy@cloudfactory.machine -v
-  #+END_SRC
-  #+BEGIN_SRC sh
+   #+END_SRC
+   #+BEGIN_SRC sh
   $ scp -P 1234 -v output.csv root@192.168.1.1:/tmp/csvfiles/
-  #+END_SRC
+   #+END_SRC
+* Understanding prompt
+ #+CAPTION: basic unix prompt
+ #+NAME:   fig:unixprompt
+ [[../images/slide-unix-prompt.png]]
 
 * Unix File Structure
   #+CAPTION: unix file system
@@ -45,79 +76,84 @@
 
   In **ubuntu**: */home/username* is home for user
 
-
 * pipes | , <redirection>>, ticks`
-  *Pipes*: [command_1] | [command_2]
+   *Pipes*: [command_1] | [command_2]
 
-  output from *command_1* is input to *command_2*
-  #+BEGIN_SRC sh
+   output from *command_1* is input to *command_2*
+   #+BEGIN_SRC sh
   # check if sidekiq is running
   ps aux | grep sidekiq
-  #+END_SRC
-  #+RESULTS:
-  : ceasors  15611  0.0  0.0  10700  2276 ?        S    16:33   0:00 grep sidekiq
+   #+END_SRC
+   #+RESULTS:
+   : ceasors  15611  0.0  0.0  10700  2276 ?        S    16:33   0:00 grep sidekiq
 
-  *Redirection*: [some_script] > output_file
-  #+BEGIN_SRC sh
+   *Redirection*: [some_script] > output_file
+   #+BEGIN_SRC sh
   date > /tmp/date
-  #+END_SRC
+   #+END_SRC
 
-  #+CAPTION: redirection out: '>' overwrite, '>>' append & '<' redirect in
-  #+NAME:   fig: redirection
-  [[../images/slide-redirect.png]]
+   #+CAPTION: redirection out: '>' overwrite, '>>' append & '<' redirect in
+   #+NAME:   fig: redirection
+   [[../images/slide-redirect.png]]
 
-  *Ticks*: [some_script] `[other_scirpt]`
-  other_script is executed before hand (first) and then some_scirpt uses that.
-  #+BEGIN_SRC sh :export both
+   *Ticks*: [some_script] `[other_scirpt]`
+   other_script is executed before hand (first) and then some_scirpt uses that.
+   #+BEGIN_SRC sh :export both
   ls -la `which python`
-  #+END_SRC
-  #+RESULTS:
-  : lrwxrwxrwx 1 root root 7 Jan 12 09:46 /usr/bin/python -> python3
-
-* Understanding prompt
-#+CAPTION: basic unix prompt
-#+NAME:   fig:unixprompt
-[[../images/slide-unix-prompt.png]]
-
-
+   #+END_SRC
+   #+RESULTS:
+   : lrwxrwxrwx 1 root root 7 Jan 12 09:46 /usr/bin/python -> python3
 
 * Some useful stuffs
   - Everthings is a file
   - CAsESeNSitiVE
   - No output means Success
   - Getting helps
-* Case Sensitive
-  *must remember this one*
-  #+BEGIN_SRC sh
+** Case Sensitive
+   *must remember this one*
+
+   #+BEGIN_SRC sh
    $ rm -rf myData.txt
    $ rm -rf MyData.txt
    $ rm -rf mydata.txt
-  #+END_SRC
+   #+END_SRC
 
-* Everythings is a file
-   	- documents, folders,
-   	- hardwares: hard-drive,
-   	- io devices: keyboard, printer
-	- network communication: network-socketsl
+** Everythings is a file
+   #+ATTR_REVEAL: :frag (roll-in)
+    - documents, folders,
+    - hardwares: hard-drive,
+    - io devices: keyboard, printer
+    - network communication: network-socketsl
 
-* Understanding permission
-  #+CAPTION: file permission on linux(unix)
-  #+NAME:   fig: file permission
-  [[../images/perms1.png]]
-  #+CAPTION: file permission described
-  #+NAME:   fig:permission
-  [[../images/perms2.png]]
+** Understanding permission
+   #+CAPTION: file permission on linux(unix)
+   #+NAME:   fig: file permission
+   [[../images/perms1.png]]
+   #+CAPTION: file permission described
+   #+NAME:   fig:permission
+   [[../images/perms2.png]]
 
-* Unix is terse
-   	Generally no output after command indicates everythings gone ok; else errors
+** Unix is terse
+   #+ATTR_REVEAL: :frag (roll-in)
+   
+      #+ATTR_REVEAL: :frag (highlight-green highlight-red)
+      * Generally no output after command indicates everythings gone ok;
+      * else errors
 
-* Getting Tools Installed
+** Testing 
+   #+ATTR_REVEAL: :frag (grow shrink roll-in fade-out none) :frag_idx (4 3 2 1 -)
+   1. I will grow.
+   2. I will shrink.
+   3. I rolled in 2nd.
+   4. I will fade out frist.
+   5. I don't fragment
+** Getting Tools Installed
 
-  MacOS:
-  [[http://brew.sh/][brew]] [install] [package_name] [[~/Pictures/useful/linux/brew_install_wget.png][:like]]
+    MacOS:
+    [[http://brew.sh/][brew]] [install] [package_name] [[~/Pictures/useful/linux/brew_install_wget.png][:like]]
 
-  Ubuntu:
-  apt-get install [package_name]
+    Ubuntu:
+    apt-get install [package_name]
 
 * Getting Help | try both | is inconsistent
   #+BEGIN_SRC sh
