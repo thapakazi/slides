@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Talk and Interaction with <a href="http://tombh.co.uk/">@tombh</a></title>
+<meta name="author" content="(Milan Thapa)"/>
+<meta name="description" content="about docker revolution"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-orgheadline1">
+<h2 id="orgheadline1">Talk/Interaction with <a href="http://tombh.co.uk/">@tombh</a> about docker revolution</h2>
+<div class="org-src-container">
+
+<pre  class="src src-yaml">- <span style="color: #F92672;">topic</span>: <span style="color: #E6DB74;">"The Docker Revolution"</span>
+  <span style="color: #F92672;">details</span>:
+    <span style="color: #E6DB74;">"Why is Docker a thing and where did it come from ?</span>
+<span style="color: #E6DB74;">     -- He'll be telling its story.</span>
+
+<span style="color: #E6DB74;">     Featuring: the limitations of molecules in CPUs,</span>
+<span style="color: #E6DB74;">     parallelism/concurrency, virtual machines and emulators, </span>
+<span style="color: #E6DB74;">     The Cloud, The Twelve Factor App Manifesto,</span>
+<span style="color: #E6DB74;">     Why testing is more important than you think &#129300; and</span>
+<span style="color: #E6DB74;">     the democratisation of the &#127760; Internet."</span>
+
+- <span style="color: #F92672;">event</span>: 
+    <span style="color: #F92672;">speaker</span>: <span style="color: #E6DB74;">"Tom Buckley-Houston"</span>
+    <span style="color: #F92672;">about_him</span>: <span style="color: #E6DB74;">"full-stack web developer, meditator, geek, #digitalnomad"</span>
+    <span style="color: #F92672;">date</span>: <span style="color: #E6DB74;">"&#128197; Feb 5, 2017, 11:00 AM &#128346; - 12:00 PM &#128347;++ "</span>
+
+    <span style="color: #F92672;">location</span>: <span style="color: #E6DB74;"><a href="https://goo.gl/maps/ASUCb2kJELo">"Academia International College &#127937;"</a></span>
+    <span style="color: #F92672;">registration_url</span>: <span style="color: #E6DB74;"><a href="https://goo.gl/forms/qYpoiaHu2Vdo0wgn2">"https://goo.gl/forms/qYpoiaHu2Vdo0wgn2"</span>
+
+
+- <span style="color: #F92672;">contact</span>: <span style="color: #E6DB74;">"9741 276 055 || 9843 063 261 || 9841 715 750"</span>
+</pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
