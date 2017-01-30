@@ -1,21 +1,21 @@
-#+TITLE: Talk and Interaction with [[http://tombh.co.uk/][@tombh]]
+#+TITLE: Talk/Q&A with [[http://tombh.co.uk/][@tombh]]
 #+DATE: Sunday, Jan 29 2017 
 #+DESCRIPTION: about docker revolution
 #+OPTIONS: author:nil date:nil title:nil num:nil toc:nil reveal_title_slide:nil
 #+OPTIONS: reveal_rolling_links:t
 
-* Talk/Interaction with [[http://tombh.co.uk/][@tombh]] about docker revolution
+* Talk/Q&A with [[http://tombh.co.uk/][@tombh]] about docker revolution
   #+BEGIN_SRC yaml
 - topic: "The Docker Revolution"
   details:
-    "Why is Docker a thing and where did it come from? --
-     I'll be telling its story.
+    "Why is Docker a thing and where did it come from ?
+     -- He'll be telling its story.
 
      Featuring: the limitations of molecules in CPUs,
      parallelism/concurrency, virtual machines and emulators, 
      The Cloud, The Twelve Factor App Manifesto,
-     why testing is more important than you think and
-     the democratisation of the Internet."
+     Why testing is more important than you think 🤔 and
+     the democratisation of the 🌐 Internet."
 
 - event: 
     speaker: "Tom Buckley-Houston"
@@ -29,12 +29,15 @@
   #+END_SRC
 
 * COMMENT Metas
+** COMMENT dirty works:
+   #+BEGIN_SRC html
       <span style="color: #F92672;">location</span>: <span style="color: #E6DB74;"><a href="https://goo.gl/maps/ASUCb2kJELo">"Academia International College &#127937;"</a></span>
     <span style="color: #F92672;">registration_url</span>: <span style="color: #E6DB74;"><a href="https://goo.gl/forms/qYpoiaHu2Vdo0wgn2">"https://goo.gl/forms/qYpoiaHu2Vdo0wgn2"</span>
+   #+END_SRC
 
-** Gist URL
+** COMMENT Gist URL
     gist: https://gist.github.com/a686d14dc8323ded9481180d4d272288
-    rawgit: https://rawgit.com/thapakazi/a686d14dc8323ded9481180d4d272288/raw/0dd6c66814346ee75231a77d2efd0b14f20f965a/docker_revolution_with_tom_feb5.html
+
 ** COMMENT Update the gist
    #+BEGIN_SRC bash
    chruby 2.3.1
