@@ -4,8 +4,15 @@
 #+OPTIONS: author:nil date:nil title:nil num:nil toc:nil reveal_title_slide:nil
 #+OPTIONS: reveal_rolling_links:t
 
+
+* post talk: Talk/Q&A with [[http://tombh.co.uk/][@tombh]] about docker revolution
+  - slides_url: https://goo.gl/qePYGy
+  - link_to_profile: http://tombh.co.uk/
+  - facebook_updates: https://www.facebook.com/events/166597447164195/
+
 * Talk/Q&A with [[http://tombh.co.uk/][@tombh]] about docker revolution
   #+BEGIN_SRC yaml
+
 - topic: "The Docker Revolution"
   details:
     "Why is Docker a thing and where did it come from ?
@@ -23,11 +30,10 @@
     date: "📅 Feb 5, 2017, 11:00 AM 🕚 - 12:00 PM 🕛++ "
 
     location: "Academia International College 🏁"
-    registration_url: "https://goo.gl/forms/qYpoiaHu2Vdo0wgn2"
-
+    
 - contact: "9741 276 055 || 9843 063 261 || 9841 715 750"
-  #+END_SRC
 
+  #+END_SRC
 * COMMENT Metas
 ** COMMENT dirty works:
    #+BEGIN_SRC html
