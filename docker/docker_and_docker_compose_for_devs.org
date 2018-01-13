@@ -149,7 +149,7 @@
   #+NAME: why bother ?
   #+CAPTION: waana see sth cool...
   #+ATTR_HTML: :width 800px
-  [[/home/thapakazi/Downloads/giphy-downsized-large.gif]]
+  [[../../slides/images/giphy-downsized-large.gif]]
 #     @@html:
 # <iframe src="https://giphy.com/media/3o7526sojEsXL3alos/giphy.mp4" width="800" height="600" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 #     @@
@@ -179,24 +179,23 @@
     #+ATTR_HTML: :width 600px
     [[https://thumbs.gfycat.com/FormalPlushGuineapig-max-1mb.gif]]
 
-* Behind the scene stuffs
+* behind the scene stuffs
 ** docker-compose.yml  
    @@html:
-   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
    @@
 ** nginx app.conf
    @@html:
-   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
    @@ 
 ** dockerfile
    @@html:
-   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
    @@ 
 ** command | things to run when app starts
    @@html:
-   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/scripts/main.sh?footer=no&slice=0:15"></script>
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/scripts/main.sh?footer=no&slice=0:15"></script>
    @@    
-
 
 * achievements till today
   So till this date, with my frens, we are able to get docker to do:
@@ -214,8 +213,9 @@
    #+NAME: looking for volunter
    #+CAPTION: I am counting on your brother...
    #+ATTR_HTML: :width 600px
-    [[../../slides/images/surprised_mouse.gif]]   
-* Enough of swag😅, lets talk business
+    [[https://i.imgur.com/PW5FxPJ.gif]]   
+
+* enough of swag😅, lets talk business
 ** what we all can do
   #+ATTR_REVEAL: :frag (appear)
    - start our docker saga 😎
@@ -242,8 +242,8 @@
    #+ATTR_HTML: :width 300px
    [[https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png]]
 
-
-* Useful urls
-   #+CAPTION: bookmarks: https://www.gettoby.com/p/z5zs97xnf98r
+* Thanks | Q&A time
+  this is the last slide :P
+   #+CAPTION: useful_urls: https://www.gettoby.com/p/z5zs97xnf98r
    #+NAME: bookmarks
    [[https://i.imgur.com/cxH572g.png]]
