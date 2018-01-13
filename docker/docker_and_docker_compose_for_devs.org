@@ -1,0 +1,249 @@
+#+TITLE: docker & docker-compose for developers👧👨
+#+description: docker and docker-compose for developers
+#+author: thapakazi
+#+email: milan s thapa s3ventea31gHT at gmail dot com
+
+#+OPTIONS: num:nil toc:nil
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_history:nil reveal_control:t
+#+OPTIONS: reveal_rolling_links:t reveal_keyboard:t reveal_overview:t num:nil
+# #+OPTIONS: reveal_title_slide:nil
+
+#+REVEAL_MARGIN: 0.25
+# #+REVEAL_MIN_SCALE: 0.5
+# #+REVEAL_MAX_SCALE: 1.5
+
+# #+REVEAL_TRANS: None/Fade/Slide/Convex/Concave/Zoom
+# #+REVEAL_THEME: Black/White/League/Sky/Beige/Simple/Serif/Blood/Night/Moon/Solarized
+#+REVEAL_THEME: beige
+
+@@html:
+<style>
+.figure-number {
+    display: none;
+}
+</style>
+@@
+
+* about.self...
+  #+ATTR_REVEAL: :frag (appear)
+  - docker fan 😃 /found it on hacker news/
+  - Working [[https://www.cloudfactory.com/][@cloudfactory]] ops team
+    - part of my job is to ~build application runtime~
+    - & help devs get their machines configured
+  - here today to share my random dev/ops stories...
+  - my 0101 footprints: [[https://twitter.com/thapakazi_][🐦]] [[https://thapakazi.github.io][@thapakazi]] 
+
+* agenda | why we are here ?
+   
+   This is a session where we talk about
+    - about [[https://www.docker.com/][🐳]] docker{,-compose} | basics, why and how of it
+    - some demo of how I am using it
+    - generalize where to start...
+    - swag😅 some hacks and tips
+
+** still why all this...
+     #+NAME: why bother ?
+     #+CAPTION: I have heard ~n.times~ "docker is awesome 😎", but nobody explains why...🤔
+     #+ATTR_HTML: :width 300px
+     [[https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png]]
+     
+* about | docker and docker-compose basics
+  Here we will talk all those boring stuffs about docker, blah blah
+  
+  #+ATTR_REVEAL: :frag (appear)      
+  ... =dont' you worry; skip we will, all the hardcore details...🙊=
+  #+REVEAL: split
+  #+NAME: docker docker docker
+  #+CAPTION:  docker docker docker
+  [[https://cdn-images-1.medium.com/max/1600/1*42K-swiwgm3lZ2xRyNU5ow.gif]]
+  
+** docker in 25 words
+     #+NAME: one of my brother asking, why containers/why docker in 25 words...
+     #+CAPTION:  wh❓ is docker in 25 words... के हो त खास मा ?
+     [[https://i.imgur.com/zReDMTf.png]]
+
+** About | docker.*
+   #+ATTR_REVEAL: :frag (appear)      
+    - =docker= is a tool to make it easier to ~create,deploy,run~
+      applications using ~containers~ => 15 words :nailed_it:
+    - in simple words
+      #+BEGIN_QUOTE
+      docker is like DRY version of old giant virtual machines, 
+      i.e, reuse existing stuffs(kernel) && leverage the containers for once good {packaging, deploying...}
+      #+END_QUOTE
+    - =docker-compose= is yet another awesome tool to glue all those
+      containers with simple YAML file definition
+      #+REVEAL: split
+     
+     ~when some says glueing continers, I remember this~
+
+     @@html:
+     <iframe src="https://drive.google.com/file/d/10_ud1DgYNtGCqgrE-WJRS1Psmbr9wQun-g/preview" width="800" height="600"></iframe>
+     @@
+** docker gotchas
+   As we start getting our hands dirty, we encounter with so many
+   vocabs and conventions(like RoR):
+   #+ATTR_REVEAL: :frag (appear)    
+   - docker is a cool virtualization technology, but as a starter, we
+     could just take it as our services manager, a pkg manager such
+     that we bundle code, runtime and all necessary libraries with
+     minimal effort, such that we can ~ship code more frequently, more safely~
+
+   - with docker.* we deal with os{images}, builds, tagging
+     them,cleaning them, distributing/pushing to registry... so we
+     better learn to play along/warmup, tons of goodies 🍪🍫 freely out, all
+     over web(best: [[https://labs.play-with-docker.com][play-with-docker]])
+   #+REVEAL: split     
+   - mostly we +ssh+ ~exec~ into containers
+   [[https://i.imgflip.com/22k6yn.jpg]]
+
+  #+REVEAL: split
+   - with ~docker@localhost~ we have a power/control to define:
+     #+ATTR_REVEAL: :frag (appear)
+     - what os our code runs on
+     - quickly ~switch between any version~ of our runtime{*ruby:2.5.0*?,2.4.0,jruby?; py:3.6.4, py:2.x}
+     - picky on storage engine/version naturally, like we define adapter database.yml in rails
+     - learn to experiment with scaling, failovers
+     - my_best: ~we can easily version control our runtime environment, just
+       like Gemfile.lock~
+  #+REVEAL: split
+  Wo wo, SLOW DOWN... I am a developer I am doing just fine without
+  docker, why are we listening to this talk ? 
+
+  I know you are, people are developing without docker-सकर, but things
+  could change, suffering could be minimized, 
+  #+ATTR_REVEAL: :frag (appear)
+  - though you are 10x skilled, have you ever empathized how your team mates are managing their
+    development machines {brew/apt/rvm/foreman/ +pacman+ /}
+  - That one =..dylib.so= file and your whole day went winter.
+
+      stack-overflow/google ~copy+paste, जे गरेनि; सुख छैन, ए मेरी बास्सै...😧~
+  - And yes, I know you barely do update your brew, because it's not fun.
+  - I develop in macOS🙈/windows🙊 and our prod is ubuntu 😆
+
+** Benefits | why use docker.*
+   #+ATTR_REVEAL: :frag (appear)
+   - *development ease* | composable infrastructure 🏡 in simple files
+     #+ATTR_REVEAL: :frag (appear)
+     - +point: helps anyone understand the generic overview of complete stack
+   - *security* | codebase with less hardcoded secrets, timely updated libs&pkgs
+   - *portability* | app can be deployed pretty much anywhere(instantly)
+     #+ATTR_REVEAL: :frag (appear)
+     - /less dependencies headache/ for everyone ☺️
+     - everyone shares the same application runtime ⚙️, libraries 
+     - ~if it runs in docker it run everywhere~
+  #+REVEAL: split
+   - Increased Agility (अज धेरै फुर्ति 💪)
+     #+ATTR_REVEAL: :frag (appear)
+     - ~[devs]:~ more freedom of *experiment-fail-learn-repeat*, room for
+       *creativity* and faster deliver
+
+     - ~[ops]:~ devs help do the half job 😀, *more granular visibility/control*
+       of stack via different prospective{~security~ | ~scaling~ |
+       ~deployments~ | ~instrumentation~}
+
+     - ~[business]:~ *reduced 💰/hr* on 
+       - vm providers aws/gce...
+       - employee on-boarding, project bootstrapping
+* enough talk, demo time
+  #+NAME: why bother ?
+  #+CAPTION: waana see sth cool...
+  #+ATTR_HTML: :width 800px
+  [[/home/thapakazi/Downloads/giphy-downsized-large.gif]]
+#     @@html:
+# <iframe src="https://giphy.com/media/3o7526sojEsXL3alos/giphy.mp4" width="800" height="600" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+#     @@
+
+* Lets go through our everyday usecase
+  Any questions so far ?
+
+** [demo#1] *I need to bring up my services before booting rails app*
+    #+CAPTION: boot necessary services{pg,redis,rabbitmq,...} with ease
+    #+NAME: [demo#1] *I need to bring up my services before booting rails app*
+    [[../../slides/images/services_demo.gif]]
+  
+** [demo#2] a new hire just arrived;
+    lets show him what/how we are building all these days...
+    #+CAPTION: this one will be live
+    #+NAME: demo of docker-compose in action
+    #+ATTR_HTML: :width 600px
+    [[https://i.pinimg.com/originals/a9/22/00/a922001319734e5a0d1014c1031c8d7b.gif]]
+
+** [demo#3] testing headless stuffs:
+    *I want to run headless selenium test with nightwatch*
+    
+** [demo#4] Scale my apps on localhost
+   *you gotta be kidding me*
+    #+CAPTION: lets this one live too...what say ?
+    #+NAME: scaling up app with docker-compose
+    #+ATTR_HTML: :width 600px
+    [[https://thumbs.gfycat.com/FormalPlushGuineapig-max-1mb.gif]]
+
+* Behind the scene stuffs
+** docker-compose.yml  
+   @@html:
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
+   @@
+** nginx app.conf
+   @@html:
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
+   @@ 
+** dockerfile
+   @@html:
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
+   @@ 
+** command | things to run when app starts
+   @@html:
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/scripts/main.sh?footer=no&slice=0:15"></script>
+   @@    
+
+
+* achievements till today
+  So till this date, with my frens, we are able to get docker to do:
+  #+ATTR_REVEAL: :frag (appear)
+  - run *test on ci* server{=jenkins=, ~gitlab~}
+  - run basic setup: *Prometheus/Grafana* on production
+  - bring up our *shared services* for {staging,deployment envs}
+  - try different awesome projects on github on +localhost+ pwd
+  - helped my brothers; ~gradle build a .apk on git push~
+  - run /emacs in container/ {to test my configs there}
+  - exp with scaling services
+  - learning new technologies:
+    - simulating HA for redis/mongo/rabbitmq
+** some good stories
+   #+NAME: looking for volunter
+   #+CAPTION: I am counting on your brother...
+   #+ATTR_HTML: :width 600px
+    [[../../slides/images/surprised_mouse.gif]]   
+* Enough of swag😅, lets talk business
+** what we all can do
+  #+ATTR_REVEAL: :frag (appear)
+   - start our docker saga 😎
+   - learn to docker-compose the development stack
+   - play-with-docker some random useful projects
+   - learn to leverage docker for your +weird+ usecase
+
+     ~yes, I will help you do that for free~ +🤑+
+** challenges ahead
+  #+ATTR_REVEAL: :frag (appear)
+   - *how to make docker to prod* ? 
+     - I have heard X companies of Nepal does this, but wonder 🤔 why they share it not.
+     - ~kubernetes~ /कुबेर निटिस/ राम्रो सँग भन्न नि अाउदैन, sticker चाइ पाको बेला टास्याहो
+   - *need a community support*, meetups like these could give us
+     kick-start thinking
+     - experimenting more
+     - see for your self if docker is a thing, starting tonight ;)
+     - +convince+ showing your team/bo$$ how painless development could be
+   - *and yes sharing, bootcamping* your awesome docker story
+
+* back to the old slide
+   #+NAME: why bother ?
+   #+CAPTION: puts "docker is awesome 😎, now you probablly know why😉"
+   #+ATTR_HTML: :width 300px
+   [[https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png]]
+
+
+* Useful urls
+   #+CAPTION: bookmarks: https://www.gettoby.com/p/z5zs97xnf98r
+   #+NAME: bookmarks
+   [[https://i.imgur.com/cxH572g.png]]

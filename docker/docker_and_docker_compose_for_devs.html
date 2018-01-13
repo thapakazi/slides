@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>docker &amp; docker-compose for developers👨👧</title>
+<meta name="author" content="(thapakazi)"/>
+<meta name="description" content="docker and docker-compose for developers"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/beige.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">docker &amp; docker-compose for developers👨👧</h1><h2 class="author">thapakazi</h2><p class="date">Created: 2018-01-13 Sat 21:36</p>
+</section>
+<p>
+
+<style>
+.figure-number {
+    display: none;
+}
+</style>
+
+</p>
+
+<section>
+<section id="slide-org702564b">
+<h2 id="org702564b">about.self&#x2026;</h2>
+<ul>
+<li class="fragment appear">docker fan 😃 <i>found it on hacker news</i></li>
+<li class="fragment appear">Working <a href="https://www.cloudfactory.com/">@cloudfactory</a> ops team
+<ul>
+<li>part of my job is to <code>build application runtime</code></li>
+<li>&amp; help devs get their machines configured</li>
+
+</ul></li>
+<li class="fragment appear">here today to share my random dev/ops stories&#x2026;</li>
+<li class="fragment appear">my 0101 footprints: <a href="https://twitter.com/thapakazi_">🐦</a> <a href="https://thapakazi.github.io">@thapakazi</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org010cc83">
+<h2 id="org010cc83">agenda | why we are here ?</h2>
+<p>
+This is a session where we talk about
+</p>
+<ul>
+<li>about <a href="https://www.docker.com/">🐳</a> docker{,-compose} | basics, why and how of it</li>
+<li>some demo of how I am using it</li>
+<li>generalize where to start&#x2026;</li>
+<li>swag😅 some hacks and tips</li>
+
+</ul>
+
+</section>
+<section id="slide-orga51ea5a">
+<h3 id="orga51ea5a">still why all this&#x2026;</h3>
+
+<div id="org0c4e1b8" class="figure">
+<p><img src="https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png" alt="ryanlerch_thinkingboy_outline.png" width="300px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>I have heard <code>n.times</code> "docker is awesome 😎", but nobody explains why&#x2026;🤔</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org2ed5a73">
+<h2 id="org2ed5a73">about | docker and docker-compose basics</h2>
+<p>
+Here we will talk all those boring stuffs about docker, blah blah
+</p>
+
+<p class="fragment (appear)">
+&#x2026; <code>dont' you worry; skip we will, all the hardcore details...🙊</code>
+</p>
+</section>
+<section >
+
+<div id="org889182e" class="figure">
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*42K-swiwgm3lZ2xRyNU5ow.gif" alt="1*42K-swiwgm3lZ2xRyNU5ow.gif" />
+</p>
+<p><span class="figure-number">Figure 2: </span>docker docker docker</p>
+</div>
+
+</section>
+<section id="slide-org689c6cb">
+<h3 id="org689c6cb">docker in 25 words</h3>
+
+<div id="org7fb6f2a" class="figure">
+<p><img src="https://i.imgur.com/zReDMTf.png" alt="zReDMTf.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>wh❓ is docker in 25 words&#x2026; के हो त खास मा ?</p>
+</div>
+
+</section>
+<section id="slide-org91f7eb2">
+<h3 id="org91f7eb2">About | docker.*</h3>
+<ul>
+<li class="fragment appear"><code>docker</code> is a tool to make it easier to <code>create,deploy,run</code>
+applications using <code>containers</code> =&gt; 15 words :nailed<sub>it</sub>:</li>
+<li class="fragment appear"><p>
+in simple words
+</p>
+<blockquote nil>
+<p>
+docker is like DRY version of old giant virtual machines, 
+i.e, reuse existing stuffs(kernel) &amp;&amp; leverage the containers for once good {packaging, deploying&#x2026;}
+</p>
+</blockquote></li>
+<li class="fragment appear"><p>
+<code>docker-compose</code> is yet another awesome tool to glue all those
+containers with simple YAML file definition
+</p>
+</section>
+<section >
+
+<p>
+<code>when some says glueing continers, I remember this</code>
+</p>
+
+<p>
+
+     <iframe src="https://drive.google.com/file/d/10_ud1DgYNtGCqgrE-WJRS1Psmbr9wQun-g/preview" width="800" height="600"></iframe>
+     
+</p></li>
+
+</ul>
+</section>
+<section id="slide-org9a777fe">
+<h3 id="org9a777fe">docker gotchas</h3>
+<p>
+As we start getting our hands dirty, we encounter with so many
+vocabs and conventions(like RoR):
+</p>
+<ul>
+<li class="fragment appear">docker is a cool virtualization technology, but as a starter, we
+could just take it as our services manager, a pkg manager such
+that we bundle code, runtime and all necessary libraries with
+minimal effort, such that we can <code>ship code more frequently, more safely</code></li>
+
+<li class="fragment appear">with docker.* we deal with os{images}, builds, tagging
+them,cleaning them, distributing/pushing to registry&#x2026; so we
+better learn to play along/warmup, tons of goodies 🍪🍫 freely out, all
+over web(best: <a href="https://labs.play-with-docker.com">play-with-docker</a>)</li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>mostly we <del>ssh</del> <code>exec</code> into containers</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="https://i.imgflip.com/22k6yn.jpg" alt="22k6yn.jpg" />
+</p>
+</div>
+
+</section>
+<section >
+<ul>
+<li>with <code>docker@localhost</code> we have a power/control to define:
+<ul>
+<li class="fragment appear">what os our code runs on</li>
+<li class="fragment appear">quickly <code>switch between any version</code> of our runtime{<b>ruby:2.5.0</b>?,2.4.0,jruby?; py:3.6.4, py:2.x}</li>
+<li class="fragment appear">picky on storage engine/version naturally, like we define adapter database.yml in rails</li>
+<li class="fragment appear">learn to experiment with scaling, failovers</li>
+<li class="fragment appear">my<sub>best</sub>: <code>we can easily version control our runtime environment, just
+       like Gemfile.lock</code></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section >
+<p>
+Wo wo, SLOW DOWN&#x2026; I am a developer I am doing just fine without
+docker, why are we listening to this talk ? 
+</p>
+
+<p>
+I know you are, people are developing without docker-सकर, but things
+could change, suffering could be minimized, 
+</p>
+<ul>
+<li class="fragment appear">though you are 10x skilled, have you ever empathized how your team mates are managing their
+development machines {brew/apt/rvm/foreman/ <del>pacman</del> /}</li>
+<li class="fragment appear"><p>
+That one <code>..dylib.so</code> file and your whole day went winter.
+</p>
+
+<p>
+stack-overflow/google <code>copy+paste, जे गरेनि; सुख छैन, ए मेरी बास्सै...😧</code>
+</p></li>
+<li class="fragment appear">And yes, I know you barely do update your brew, because it's not fun.</li>
+<li class="fragment appear">I develop in macOS🙈/windows🙊 and our prod is ubuntu 😆</li>
+
+</ul>
+
+</section>
+<section id="slide-org452854a">
+<h3 id="org452854a">Benefits | why use docker.*</h3>
+<ul>
+<li class="fragment appear"><b>development ease</b> | composable infrastructure 🏡 in simple files
+<ul>
+<li class="fragment appear">+point: helps anyone understand the generic overview of complete stack</li>
+
+</ul></li>
+<li class="fragment appear"><b>security</b> | codebase with less hardcoded secrets, timely updated libs&amp;pkgs</li>
+<li class="fragment appear"><b>portability</b> | app can be deployed pretty much anywhere(instantly)
+<ul>
+<li class="fragment appear"><i>less dependencies headache</i> for everyone ☺️</li>
+<li class="fragment appear">everyone shares the same application runtime ⚙️, libraries</li>
+<li class="fragment appear"><code>if it runs in docker it run everywhere</code></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section >
+<ul>
+<li>Increased Agility (अज धेरै फुर्ति 💪)
+<ul>
+<li class="fragment appear"><code>[devs]:</code> more freedom of <b>experiment-fail-learn-repeat</b>, room for
+<b>creativity</b> and faster deliver</li>
+
+<li class="fragment appear"><code>[ops]:</code> devs help do the half job 😀, <b>more granular visibility/control</b>
+of stack via different prospective{<code>security</code> | <code>scaling</code> |
+<code>deployments</code> | <code>instrumentation</code>}</li>
+
+<li class="fragment appear"><code>[business]:</code> <b>reduced 💰/hr</b> on 
+<ul>
+<li>vm providers aws/gce&#x2026;</li>
+<li>employee on-boarding, project bootstrapping</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3c03daa">
+<h2 id="org3c03daa">enough talk, demo time</h2>
+
+<div id="org614d645" class="figure">
+<p><img src="file:///home/thapakazi/Downloads/giphy-downsized-large.gif" alt="giphy-downsized-large.gif" width="800px" />
+</p>
+<p><span class="figure-number">Figure 5: </span>waana see sth cool&#x2026;</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orge5fbe80">
+<h2 id="orge5fbe80">Lets go through our everyday usecase</h2>
+<p>
+Any questions so far ?
+</p>
+
+</section>
+<section id="slide-org2d2b472">
+<h3 id="org2d2b472">[demo#1] <b>I need to bring up my services before booting rails app</b></h3>
+
+<div id="orgc298d07" class="figure">
+<p><img src="../../slides/images/services_demo.gif" alt="services_demo.gif" />
+</p>
+<p><span class="figure-number">Figure 6: </span>boot necessary services{pg,redis,rabbitmq,&#x2026;} with ease</p>
+</div>
+
+</section>
+<section id="slide-orgbaf8aca">
+<h3 id="orgbaf8aca">[demo#2] a new hire just arrived;</h3>
+<p>
+lets show him what/how we are building all these days&#x2026;
+</p>
+
+<div id="org499c7e9" class="figure">
+<p><img src="https://i.pinimg.com/originals/a9/22/00/a922001319734e5a0d1014c1031c8d7b.gif" alt="a922001319734e5a0d1014c1031c8d7b.gif" width="600px" />
+</p>
+<p><span class="figure-number">Figure 7: </span>this one will be live</p>
+</div>
+
+</section>
+<section id="slide-org5ae0a86">
+<h3 id="org5ae0a86">[demo#3] testing headless stuffs:</h3>
+<p>
+<b>I want to run headless selenium test with nightwatch</b>
+</p>
+
+</section>
+<section id="slide-org81fbde6">
+<h3 id="org81fbde6">[demo#4] Scale my apps on localhost</h3>
+<p>
+<b>you gotta be kidding me</b>
+</p>
+
+<div id="org219c5e9" class="figure">
+<p><img src="https://thumbs.gfycat.com/FormalPlushGuineapig-max-1mb.gif" alt="FormalPlushGuineapig-max-1mb.gif" width="600px" />
+</p>
+<p><span class="figure-number">Figure 8: </span>lets this one live too&#x2026;what say ?</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf8c1b7c">
+<h2 id="orgf8c1b7c">Behind the scene stuffs</h2>
+<div class="outline-text-2" id="text-orgf8c1b7c">
+</div>
+</section>
+<section id="slide-orgbbcc49a">
+<h3 id="orgbbcc49a">docker-compose.yml</h3>
+<p>
+
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
+   
+</p>
+</section>
+<section id="slide-org49ce26f">
+<h3 id="org49ce26f">nginx app.conf</h3>
+<p>
+
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
+    
+</p>
+</section>
+<section id="slide-orgf4012dd">
+<h3 id="orgf4012dd">dockerfile</h3>
+<p>
+
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
+    
+</p>
+</section>
+<section id="slide-org05c7e36">
+<h3 id="org05c7e36">command | things to run when app starts</h3>
+<p>
+
+   <script src="http://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/scripts/main.sh?footer=no&slice=0:15"></script>
+       
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org734242f">
+<h2 id="org734242f">achievements till today</h2>
+<p>
+So till this date, with my frens, we are able to get docker to do:
+</p>
+<ul>
+<li class="fragment appear">run <b>test on ci</b> server{<code>jenkins</code>, <code>gitlab</code>}</li>
+<li class="fragment appear">run basic setup: <b>Prometheus/Grafana</b> on production</li>
+<li class="fragment appear">bring up our <b>shared services</b> for {staging,deployment envs}</li>
+<li class="fragment appear">try different awesome projects on github on <del>localhost</del> pwd</li>
+<li class="fragment appear">helped my brothers; <code>gradle build a .apk on git push</code></li>
+<li class="fragment appear">run <i>emacs in container</i> {to test my configs there}</li>
+<li class="fragment appear">exp with scaling services</li>
+<li class="fragment appear">learning new technologies:
+<ul>
+<li>simulating HA for redis/mongo/rabbitmq</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orga56b3e9">
+<h3 id="orga56b3e9">some good stories</h3>
+
+<div id="org5681ab9" class="figure">
+<p><img src="../../slides/images/surprised_mouse.gif" alt="surprised_mouse.gif" width="600px" />   
+</p>
+<p><span class="figure-number">Figure 9: </span>I am counting on your brother&#x2026;</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgad276fe">
+<h2 id="orgad276fe">Enough of swag😅, lets talk business</h2>
+<div class="outline-text-2" id="text-orgad276fe">
+</div>
+</section>
+<section id="slide-orgf6aa3d3">
+<h3 id="orgf6aa3d3">what we all can do</h3>
+<ul>
+<li class="fragment appear">start our docker saga 😎</li>
+<li class="fragment appear">learn to docker-compose the development stack</li>
+<li class="fragment appear">play-with-docker some random useful projects</li>
+<li class="fragment appear"><p>
+learn to leverage docker for your <del>weird</del> usecase
+</p>
+
+<p>
+<code>yes, I will help you do that for free</code> <del>🤑</del>
+</p></li>
+
+</ul>
+</section>
+<section id="slide-org7cb4115">
+<h3 id="org7cb4115">challenges ahead</h3>
+<ul>
+<li class="fragment appear"><b>how to make docker to prod</b> ? 
+<ul>
+<li>I have heard X companies of Nepal does this, but wonder 🤔 why they share it not.~</li>
+<li><code>kubernetes</code> <i>कुबेर निटिस</i> राम्रो सँग भन्न नि अाउदैन, sticker चाइ पाको बेला टास्याहो</li>
+
+</ul></li>
+<li class="fragment appear"><b>need a community support</b>, meetups like these could give us
+kick-start thinking
+<ul>
+<li>experimenting more</li>
+<li>see for your self if docker is a thing, starting tonight ;)</li>
+<li><del>convince</del> showing your team/bo$$ how painless development could be</li>
+
+</ul></li>
+<li class="fragment appear"><b>and yes sharing, bootcamping</b> your awesome docker story</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgaf8955c">
+<h2 id="orgaf8955c">back to the old slide</h2>
+
+<div id="org3fb9d2e" class="figure">
+<p><img src="https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png" alt="ryanlerch_thinkingboy_outline.png" width="300px" />
+</p>
+<p><span class="figure-number">Figure 10: </span>puts "docker is awesome 😎, now you probablly know why&#x2026;😉"</p>
+</div>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org5b13d80">
+<h2 id="org5b13d80">Useful urls</h2>
+
+<div id="org7a26ec6" class="figure">
+<p><img src="https://i.imgur.com/cxH572g.png" alt="cxH572g.png" />
+</p>
+<p><span class="figure-number">Figure 11: </span>bookmarks: <a href="https://www.gettoby.com/p/z5zs97xnf98r">https://www.gettoby.com/p/z5zs97xnf98r</a></p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+margin: 0.25,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
