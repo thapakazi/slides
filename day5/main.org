@@ -5,6 +5,24 @@
 #+STARTUP: content inlineimages
 #+OPTIONS: num:nil toc:nil H:1 creator:nil author:nil email:t
 
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:auto
+#+OPTIONS: html-preamble:t html-scripts:t html-style:t
+#+OPTIONS: html5-fancy:nil tex:t
+#+HTML_DOCTYPE: xhtml-strict
+#+HTML_CONTAINER: div
+#+DESCRIPTION:
+#+KEYWORDS:
+#+HTML_LINK_HOME:
+#+HTML_LINK_UP:
+#+HTML_MATHJAX:
+#+HTML_HEAD:
+#+HTML_HEAD_EXTRA:
+#+SUBTITLE:
+#+INFOJS_OPT:
+#+CREATOR: <a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.1.50.1 (<a href="http://orgmode.org">Org</a> mode 8.3.2)
+#+LATEX_HEADER:
+
+
 [[./lazy-ninja.gif]]
 * CONTENTS:
    - tmux & tmuxinator 
@@ -83,7 +101,7 @@
 
 ** Browser Plugins
    - [[https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en][jsonview]]
-      #+BEGIN_SRC js
+      #+BEGIN_SRC json
    {
     "checks": {
         "memory": {
@@ -158,11 +176,11 @@
 
      #+END_EXAMPLE
   + नेट लास्टै slow छ हो ??
-    #+BEGIN_SRC
+    #+BEGIN_SRC sh
     mtr -n github.com
     #+END_SRC
   + tired of ps aux|grep sidekiq && kill -9 XXXX
-    #+BEGIN_SRC
+    #+BEGIN_SRC sh
     pgrep -fil sidekiq      # to know your process
     pkill -STOP sidekiq     # stop the sidkiq process
     #+END_SRC

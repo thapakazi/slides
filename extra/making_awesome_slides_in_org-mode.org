@@ -5,6 +5,7 @@
 #+STARTUP: content
 
 #+REVEAL_ROOT:  ../assets/reveal.js
+#+REVEAL_TRANS: cube
 
 * Before you begin
   #+BEGIN_QUOTE
@@ -26,6 +27,7 @@
    #+BEGIN_SRC emacs-lisp
 (use-package ox-reveal
   :ensure ox-reveal)
+
 
 (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
 (setq org-reveal-mathjax t)
@@ -62,7 +64,7 @@
    - or via seting it via emacs config
      #+BEGIN_SRC emacs-lisp
      ;; Using directly from cdn
-     (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")
+     (setq org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0/")
 
      ;;;; or using local copy
      ;; (setq org-reveal-root "file://path/to/reveal.js/3.0.0/")
@@ -114,3 +116,5 @@
 * There is more
    Org Reveal Example: https://raw.githubusercontent.com/yjwen/org-reveal/master/Readme.org
 
+* lets write some symbols
+   \alpha \ \beta
