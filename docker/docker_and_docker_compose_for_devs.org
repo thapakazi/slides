@@ -31,7 +31,9 @@
     - part of my job is to ~build application runtime~
     - & help devs get their machines configured
   - here today to share my random dev/ops stories...
-  - my 0101 footprints: [[https://twitter.com/thapakazi_][🐦]] [[https://thapakazi.github.io][@thapakazi]] 
+  - my 0101 footprints: [[https://twitter.com/thapakazi_][🐦]] [[https://thapakazi.github.io][https://thapakazi.github.io]]
+  - watchout, typos are hard to avoid...
+  - if you are interested, we are looking for ops 😉 in our team
 
 * agenda | why we are here ?
    
@@ -75,7 +77,7 @@
       containers with simple YAML file definition
       #+REVEAL: split
      
-     ~when some says glueing continers, I remember this~
+     ~when some says gluing containers, I remember this~
 
      @@html:
      <iframe src="https://drive.google.com/file/d/10_ud1DgYNtGCqgrE-WJRS1Psmbr9wQun-g/preview" width="800" height="600"></iframe>
@@ -139,7 +141,7 @@
        *creativity* and faster deliver
 
      - ~[ops]:~ devs help do the half job 😀, *more granular visibility/control*
-       of stack via different prospective{~security~ | ~scaling~ |
+       of stack via different angles {~security~ | ~scaling~ |
        ~deployments~ | ~instrumentation~}
 
      - ~[business]:~ *reduced 💰/hr* on 
@@ -147,7 +149,7 @@
        - employee on-boarding, project bootstrapping
 * enough talk, demo time
   #+NAME: why bother ?
-  #+CAPTION: waana see sth cool...
+  #+CAPTION: wanna see sth cool...
   #+ATTR_HTML: :width 800px
   [[../../slides/images/giphy-downsized-large.gif]]
 #     @@html:
@@ -171,6 +173,11 @@
 
 ** [demo#3] testing headless stuffs:
     *I want to run headless selenium test with nightwatch*
+      - I am afraid I can't make gif here...
+
+	if you are interested:
+        [[https://github.com/SeleniumHQ/docker-selenium/wiki/Getting-Started-with-Hub-and-Nodes][docker-selenium/wiki/Getting-Started-with-Hub-and-Nodes]]
+	its was super, just like that.
     
 ** [demo#4] Scale my apps on localhost
    *you gotta be kidding me*
@@ -180,6 +187,10 @@
     [[https://thumbs.gfycat.com/FormalPlushGuineapig-max-1mb.gif]]
 
 * behind the scene stuffs
+** dockerfile
+   @@html:
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
+   @@ 
 ** docker-compose.yml  
    @@html:
    <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
@@ -187,10 +198,6 @@
 ** nginx app.conf
    @@html:
    <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
-   @@ 
-** dockerfile
-   @@html:
-   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
    @@ 
 ** command | things to run when app starts
    @@html:
@@ -210,8 +217,8 @@
   - learning new technologies:
     - simulating HA for redis/mongo/rabbitmq
 ** some good stories
-   #+NAME: looking for volunter
-   #+CAPTION: I am counting on your brother...
+   #+NAME: looking for volunteer
+   #+CAPTION: I am counting on you brother...
    #+ATTR_HTML: :width 600px
     [[https://i.imgur.com/PW5FxPJ.gif]]   
 
@@ -238,7 +245,7 @@
 
 * back to the old slide
    #+NAME: why bother ?
-   #+CAPTION: puts "docker is awesome 😎, now you probablly know why😉"
+   #+CAPTION: puts "docker is awesome 😎, now you probably know why😉"
    #+ATTR_HTML: :width 300px
    [[https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png]]
 

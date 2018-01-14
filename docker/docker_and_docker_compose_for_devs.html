@@ -27,7 +27,7 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">docker &amp; docker-compose for developers👧👨</h1><h2 class="author">thapakazi</h2><p class="date">Created: 2018-01-13 Sat 23:37</p>
+<section id="sec-title-slide"><h1 class="title">docker &amp; docker-compose for developers👧👨</h1><h2 class="author">thapakazi</h2><p class="date">Created: 2018-01-14 Sun 12:05</p>
 </section>
 <p>
 
@@ -40,8 +40,8 @@
 </p>
 
 <section>
-<section id="slide-org6339bda">
-<h2 id="org6339bda">about.self&#x2026;</h2>
+<section id="slide-org9e344f9">
+<h2 id="org9e344f9">about.self&#x2026;</h2>
 <ul>
 <li class="fragment appear">docker fan 😃 <i>found it on hacker news</i></li>
 <li class="fragment appear">Working <a href="https://www.cloudfactory.com/">@cloudfactory</a> ops team
@@ -51,15 +51,17 @@
 
 </ul></li>
 <li class="fragment appear">here today to share my random dev/ops stories&#x2026;</li>
-<li class="fragment appear">my 0101 footprints: <a href="https://twitter.com/thapakazi_">🐦</a> <a href="https://thapakazi.github.io">@thapakazi</a></li>
+<li class="fragment appear">my 0101 footprints: <a href="https://twitter.com/thapakazi_">🐦</a> <a href="https://thapakazi.github.io">https://thapakazi.github.io</a></li>
+<li class="fragment appear">watchout, typos are hard to avoid&#x2026;</li>
+<li class="fragment appear">if you are interested, we are looking for ops 😉 in our team</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org91eb5f1">
-<h2 id="org91eb5f1">agenda | why we are here ?</h2>
+<section id="slide-org79e368a">
+<h2 id="org79e368a">agenda | why we are here ?</h2>
 <p>
 This is a session where we talk about
 </p>
@@ -72,10 +74,10 @@ This is a session where we talk about
 </ul>
 
 </section>
-<section id="slide-orgea385b1">
-<h3 id="orgea385b1">still why all this&#x2026;</h3>
+<section id="slide-org82ff9b2">
+<h3 id="org82ff9b2">still why all this&#x2026;</h3>
 
-<div id="org2ed75c2" class="figure">
+<div id="org1e98d04" class="figure">
 <p><img src="https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png" alt="ryanlerch_thinkingboy_outline.png" width="300px" />
 </p>
 <p><span class="figure-number">Figure 1: </span>I have heard <code>n.times</code> "docker is awesome 😎", but nobody explains why&#x2026;🤔</p>
@@ -84,8 +86,8 @@ This is a session where we talk about
 </section>
 </section>
 <section>
-<section id="slide-org0b487ff">
-<h2 id="org0b487ff">about | docker and docker-compose basics</h2>
+<section id="slide-org6f9a0e2">
+<h2 id="org6f9a0e2">about | docker and docker-compose basics</h2>
 <p>
 Here we will talk all those boring stuffs about docker, blah blah
 </p>
@@ -96,25 +98,25 @@ Here we will talk all those boring stuffs about docker, blah blah
 </section>
 <section >
 
-<div id="org03bab61" class="figure">
+<div id="orgdde602a" class="figure">
 <p><img src="https://cdn-images-1.medium.com/max/1600/1*42K-swiwgm3lZ2xRyNU5ow.gif" alt="1*42K-swiwgm3lZ2xRyNU5ow.gif" />
 </p>
 <p><span class="figure-number">Figure 2: </span>docker docker docker</p>
 </div>
 
 </section>
-<section id="slide-org62da25f">
-<h3 id="org62da25f">docker in 25 words</h3>
+<section id="slide-orgf7a34fd">
+<h3 id="orgf7a34fd">docker in 25 words</h3>
 
-<div id="org96fe6cb" class="figure">
+<div id="org9d01f45" class="figure">
 <p><img src="https://i.imgur.com/zReDMTf.png" alt="zReDMTf.png" />
 </p>
 <p><span class="figure-number">Figure 3: </span>wh❓ is docker in 25 words&#x2026; के हो त खास मा ?</p>
 </div>
 
 </section>
-<section id="slide-orgc1abbf6">
-<h3 id="orgc1abbf6">About | docker.*</h3>
+<section id="slide-org9d79c42">
+<h3 id="org9d79c42">About | docker.*</h3>
 <ul>
 <li class="fragment appear"><code>docker</code> is a tool to make it easier to <code>create,deploy,run</code>
 applications using <code>containers</code> =&gt; 15 words :nailed<sub>it</sub>:</li>
@@ -135,7 +137,7 @@ containers with simple YAML file definition
 <section >
 
 <p>
-<code>when some says glueing continers, I remember this</code>
+<code>when some says gluing containers, I remember this</code>
 </p>
 
 <p>
@@ -146,8 +148,8 @@ containers with simple YAML file definition
 
 </ul>
 </section>
-<section id="slide-org7dd496a">
-<h3 id="org7dd496a">docker gotchas</h3>
+<section id="slide-org616c39d">
+<h3 id="org616c39d">docker gotchas</h3>
 <p>
 As we start getting our hands dirty, we encounter with so many
 vocabs and conventions(like RoR):
@@ -218,8 +220,8 @@ stack-overflow/google <code>copy+paste, जे गरेनि; सुख छै
 </ul>
 
 </section>
-<section id="slide-orgc891a2a">
-<h3 id="orgc891a2a">Benefits | why use docker.*</h3>
+<section id="slide-orgae23031">
+<h3 id="orgae23031">Benefits | why use docker.*</h3>
 <ul>
 <li class="fragment appear"><b>development ease</b> | composable infrastructure 🏡 in simple files
 <ul>
@@ -245,7 +247,7 @@ stack-overflow/google <code>copy+paste, जे गरेनि; सुख छै
 <b>creativity</b> and faster deliver</li>
 
 <li class="fragment appear"><code>[ops]:</code> devs help do the half job 😀, <b>more granular visibility/control</b>
-of stack via different prospective{<code>security</code> | <code>scaling</code> |
+of stack via different angles {<code>security</code> | <code>scaling</code> |
 <code>deployments</code> | <code>instrumentation</code>}</li>
 
 <li class="fragment appear"><code>[business]:</code> <b>reduced 💰/hr</b> on 
@@ -261,62 +263,74 @@ of stack via different prospective{<code>security</code> | <code>scaling</code> 
 </section>
 </section>
 <section>
-<section id="slide-orgd958b50">
-<h2 id="orgd958b50">enough talk, demo time</h2>
+<section id="slide-orgb3a11a5">
+<h2 id="orgb3a11a5">enough talk, demo time</h2>
 
-<div id="org0fb3781" class="figure">
+<div id="org50bb821" class="figure">
 <p><img src="../../slides/images/giphy-downsized-large.gif" alt="giphy-downsized-large.gif" width="800px" />
 </p>
-<p><span class="figure-number">Figure 5: </span>waana see sth cool&#x2026;</p>
+<p><span class="figure-number">Figure 5: </span>wanna see sth cool&#x2026;</p>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org110bef6">
-<h2 id="org110bef6">Lets go through our everyday usecase</h2>
+<section id="slide-orgaacbe7e">
+<h2 id="orgaacbe7e">Lets go through our everyday usecase</h2>
 <p>
 Any questions so far ?
 </p>
 
 </section>
-<section id="slide-orgd2c4ccd">
-<h3 id="orgd2c4ccd">[demo#1] <b>I need to bring up my services before booting rails app</b></h3>
+<section id="slide-org53947d1">
+<h3 id="org53947d1">[demo#1] <b>I need to bring up my services before booting rails app</b></h3>
 
-<div id="org99067f9" class="figure">
+<div id="org211695f" class="figure">
 <p><img src="../../slides/images/services_demo.gif" alt="services_demo.gif" />
 </p>
 <p><span class="figure-number">Figure 6: </span>boot necessary services{pg,redis,rabbitmq,&#x2026;} with ease</p>
 </div>
 
 </section>
-<section id="slide-org680ba3b">
-<h3 id="org680ba3b">[demo#2] a new hire just arrived;</h3>
+<section id="slide-org6b66e27">
+<h3 id="org6b66e27">[demo#2] a new hire just arrived;</h3>
 <p>
 lets show him what/how we are building all these days&#x2026;
 </p>
 
-<div id="org0681cad" class="figure">
+<div id="org5884848" class="figure">
 <p><img src="https://i.pinimg.com/originals/a9/22/00/a922001319734e5a0d1014c1031c8d7b.gif" alt="a922001319734e5a0d1014c1031c8d7b.gif" width="600px" />
 </p>
 <p><span class="figure-number">Figure 7: </span>this one will be live</p>
 </div>
 
 </section>
-<section id="slide-org27238b4">
-<h3 id="org27238b4">[demo#3] testing headless stuffs:</h3>
+<section id="slide-org95ef23d">
+<h3 id="org95ef23d">[demo#3] testing headless stuffs:</h3>
 <p>
 <b>I want to run headless selenium test with nightwatch</b>
 </p>
+<ul>
+<li><p>
+I am afraid I can't make gif here&#x2026;
+</p>
+
+<p>
+if you are interested:
+<a href="https://github.com/SeleniumHQ/docker-selenium/wiki/Getting-Started-with-Hub-and-Nodes">docker-selenium/wiki/Getting-Started-with-Hub-and-Nodes</a>
+its was super, just like that.
+</p></li>
+
+</ul>
 
 </section>
-<section id="slide-org875e9ca">
-<h3 id="org875e9ca">[demo#4] Scale my apps on localhost</h3>
+<section id="slide-orgcccf73d">
+<h3 id="orgcccf73d">[demo#4] Scale my apps on localhost</h3>
 <p>
 <b>you gotta be kidding me</b>
 </p>
 
-<div id="orgf7968b3" class="figure">
+<div id="org70c213b" class="figure">
 <p><img src="https://thumbs.gfycat.com/FormalPlushGuineapig-max-1mb.gif" alt="FormalPlushGuineapig-max-1mb.gif" width="600px" />
 </p>
 <p><span class="figure-number">Figure 8: </span>lets this one live too&#x2026;what say ?</p>
@@ -325,37 +339,37 @@ lets show him what/how we are building all these days&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-org2e124e8">
-<h2 id="org2e124e8">behind the scene stuffs</h2>
-<div class="outline-text-2" id="text-org2e124e8">
+<section id="slide-orga55c28b">
+<h2 id="orga55c28b">behind the scene stuffs</h2>
+<div class="outline-text-2" id="text-orga55c28b">
 </div>
 </section>
-<section id="slide-org90404f4">
-<h3 id="org90404f4">docker-compose.yml</h3>
-<p>
-
-   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
-   
-</p>
-</section>
-<section id="slide-orgb192d3f">
-<h3 id="orgb192d3f">nginx app.conf</h3>
-<p>
-
-   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
-    
-</p>
-</section>
-<section id="slide-orga5303fc">
-<h3 id="orga5303fc">dockerfile</h3>
+<section id="slide-orge7a966c">
+<h3 id="orge7a966c">dockerfile</h3>
 <p>
 
    <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/Dockerfile?footer=no"></script>
     
 </p>
 </section>
-<section id="slide-org950770f">
-<h3 id="org950770f">command | things to run when app starts</h3>
+<section id="slide-org5d60d6c">
+<h3 id="org5d60d6c">docker-compose.yml</h3>
+<p>
+
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/docker-compose.yml?footer=no&slice=0:29"></script>
+   
+</p>
+</section>
+<section id="slide-orgb9027e6">
+<h3 id="orgb9027e6">nginx app.conf</h3>
+<p>
+
+   <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/.docker/nginx/app.conf?footer=no"></script>
+    
+</p>
+</section>
+<section id="slide-org378d343">
+<h3 id="org378d343">command | things to run when app starts</h3>
 <p>
 
    <script src="https://gist-it.appspot.com/github/thapakazi/rails_invoice/blob/master/scripts/main.sh?footer=no&slice=0:15"></script>
@@ -365,8 +379,8 @@ lets show him what/how we are building all these days&#x2026;
 </section>
 </section>
 <section>
-<section id="slide-orgdd3055a">
-<h2 id="orgdd3055a">achievements till today</h2>
+<section id="slide-org1be1047">
+<h2 id="org1be1047">achievements till today</h2>
 <p>
 So till this date, with my frens, we are able to get docker to do:
 </p>
@@ -386,25 +400,25 @@ So till this date, with my frens, we are able to get docker to do:
 
 </ul>
 </section>
-<section id="slide-org682fd66">
-<h3 id="org682fd66">some good stories</h3>
+<section id="slide-orgaf837fe">
+<h3 id="orgaf837fe">some good stories</h3>
 
-<div id="orgc03beb1" class="figure">
+<div id="orgd8ac2cc" class="figure">
 <p><img src="https://i.imgur.com/PW5FxPJ.gif" alt="PW5FxPJ.gif" width="600px" />   
 </p>
-<p><span class="figure-number">Figure 9: </span>I am counting on your brother&#x2026;</p>
+<p><span class="figure-number">Figure 9: </span>I am counting on you brother&#x2026;</p>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org4d40605">
-<h2 id="org4d40605">enough of swag😅, lets talk business</h2>
-<div class="outline-text-2" id="text-org4d40605">
+<section id="slide-org0cfd8e9">
+<h2 id="org0cfd8e9">enough of swag😅, lets talk business</h2>
+<div class="outline-text-2" id="text-org0cfd8e9">
 </div>
 </section>
-<section id="slide-org517a3cb">
-<h3 id="org517a3cb">what we all can do</h3>
+<section id="slide-org94ddc9f">
+<h3 id="org94ddc9f">what we all can do</h3>
 <ul>
 <li class="fragment appear">start our docker saga 😎</li>
 <li class="fragment appear">learn to docker-compose the development stack</li>
@@ -419,8 +433,8 @@ learn to leverage docker for your <del>weird</del> usecase
 
 </ul>
 </section>
-<section id="slide-org8ea9a14">
-<h3 id="org8ea9a14">challenges ahead</h3>
+<section id="slide-org55de255">
+<h3 id="org55de255">challenges ahead</h3>
 <ul>
 <li class="fragment appear"><b>how to make docker to prod</b> ? 
 <ul>
@@ -443,25 +457,25 @@ kick-start thinking
 </section>
 </section>
 <section>
-<section id="slide-org35d26b0">
-<h2 id="org35d26b0">back to the old slide</h2>
+<section id="slide-org040919e">
+<h2 id="org040919e">back to the old slide</h2>
 
-<div id="orgd799470" class="figure">
+<div id="orgf0ed704" class="figure">
 <p><img src="https://i1.wp.com/openclipart.org/image/800px/svg_to_png/630/ryanlerch_thinkingboy_outline.png" alt="ryanlerch_thinkingboy_outline.png" width="300px" />
 </p>
-<p><span class="figure-number">Figure 10: </span>puts "docker is awesome 😎, now you probablly know why😉"</p>
+<p><span class="figure-number">Figure 10: </span>puts "docker is awesome 😎, now you probably know why😉"</p>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-orgbb0ee75">
-<h2 id="orgbb0ee75">Thanks | Q&amp;A time</h2>
+<section id="slide-orgeeff503">
+<h2 id="orgeeff503">Thanks | Q&amp;A time</h2>
 <p>
 this is the last slide :P
 </p>
 
-<div id="org9e3fffe" class="figure">
+<div id="org3ee96dd" class="figure">
 <p><img src="https://i.imgur.com/cxH572g.png" alt="cxH572g.png" />
 </p>
 <p><span class="figure-number">Figure 11: </span>useful<sub>urls</sub>: <a href="https://www.gettoby.com/p/z5zs97xnf98r">https://www.gettoby.com/p/z5zs97xnf98r</a></p>
