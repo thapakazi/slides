@@ -1,0 +1,43 @@
+#+TILTE: Learn to Prometheus Basics
+#+DESCRIPTION: baiscs getting start with kinda info
+
+
+* Intro | Prometheus, Grafana
+  
+**  Prometheus is a:
+    - open source monitoring & alerting toolkit
+    - developed @soundcloud by ex-googlers
+    - a simple pull based design to scrape metrics
+    - save them all as time-series data
+    - same rule to alert and graph
+    - designed in mind to monitor microservices
+
+**  Prometheus in components:
+    - prometheus server
+    - exporter(a independently operating executables exposing the
+      necessary metrics via http api like: http://localhost:9100/metrics
+    - OR client 
+
+** Prometheus and us
+   So what for us ?
+   - instrument rails app
+   - instument sidekiq(more properly)
+
+* Where to start | Quick Refrences
+  lots of goodies out there:
+  - [[https://prometheus.io/docs/introduction/overview/][official docs]]
+  - [[https://www.reddit.com/r/PrometheusMonitoring/][Reddit threads]]
+  - [[https://www.robustperception.io/instrumenting-a-ruby-on-rails-application-with-prometheus/][Instrumenting a Ruby on Rails Application with Prometheus]]
+  - [[https://www.robustperception.io/blog/][Blog: by bbrazil]]
+  - [[https://training.robustperception.io/p/introduction-to-prometheus][Introduction to Prometheus - Free Training]]
+  - [[https://winderresearch.com/introduction-to-monitoring-microservices-with-prometheus/][Introduction to Monitoring Microservices with Prometheus -- by Phil Winder]]
+* Lets build our own prometheus - DEMO
+  We will build our own  production today, shall we
+* Hacks | tips & tricks
+** Reload config like a BO$$ 😎 | [[https://www.robustperception.io/reloading-prometheus-configuration/][quick_link]]
+   Make sure you enable ~--web.enable-lifecycle~ flag when you start
+   prometheus, reloading is turned off from version later 2.0
+   #+BEGIN_SRC bash
+   curl -X POST http://localhost:9090/-/reload || kill -HUP pid_of_prometheus
+   #+END_SRC
+
