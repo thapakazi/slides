@@ -1,0 +1,27 @@
+#+TITLE: TechCon Kathmandu 2019
+#+DATE: Saturday, Dec 21 2019
+#+DESCRIPTION: slide deck for techcon 2019
+
+* Proposal Topic
+   Could be one of these
+   - multi-stage docker build and docker best practices
+   - Kubernetes 101
+     - why and how to kubectl
+     - trying out k8s on localhost
+     - understing the concepts
+   - Being Continious is a Super Power
+     - CI/CD workflow
+     - easy pipeline setup with gitlab to k8s cluster
+   - Infrastructure as Code with terraform
+
+* Event Desc
+  url: https://www.facebook.com/events/454153948527859/
+  desc:
+    #+begin_quote
+  TechCon Kathmandu 2019 is a one-day tech conference aimed and designed for core engineers of the tech industry.
+
+This is an opportunity to gain knowledge through sharing best software engineering practices that cater to various levels, from beginners, through intermediate, and on to the expert. The event is filled with amazing keynote speakers, breakout sessions, networking sessions that help deepen your technical knowledge.
+
+More details will be shared soon.
+  #+end_quote
+
