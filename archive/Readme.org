@@ -1,0 +1,16 @@
+#+TITLE: This is the old archieve of my slides
+#+DATE: Saturday, Nov 23 2019
+
+** this includes following:
+  |-----------------+---------------------+--------------------------------+--------------------------------|
+  | topic           | date                | Remarks                        | includes                       |
+  |-----------------+---------------------+--------------------------------+--------------------------------|
+  | ShellBasics     | Thu 19 Feb 2015     | Becoming a ShellAngel          | Basic Introduction             |
+  | BeingProductive | Thu 06 Aug 2015     | Lunch & Learn @cf              | tmux{inator},vi,tips/tricks    |
+  | Awesome Slides  | Sat Aug 27 NTP 2016 | Creating Awesome Reveal in org | org-mode, ox-reveal, reveal.js |
+  |-----------------+---------------------+--------------------------------+--------------------------------|
+
+** old +New+ Sensation
+   Now there is reveal, it will be more fun, like 
+
+
