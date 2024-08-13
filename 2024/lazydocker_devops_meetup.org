@@ -1,0 +1,109 @@
+#+TITLE: LazyDocker 😴🐳
+#+DATE: Saturday, Aug 10 2024
+
+* Intro 🙋🏽
+
+    Greetings all !!
+
+    #+begin_src yaml
+    apiVersion: v1/intro
+    kind: AboutMe
+    spec:
+       labels:
+         name: Milan Thapa
+         site: https://thapakazi.com
+       social:
+         github: thapakazi
+         twitter: thapakazi_
+    #+end_src
+
+    Lets  get started !!
+
+
+* Quick Recap 📚
+
+  - with docker, we make "boxes"
+  - "boxes" with your code, dependencies, and configuration.
+    - these "boxes" can be:
+      - *Built* on one computer.
+      - *Pushed* and stored remotely.
+      - *Pulled* to another computer.
+      - And simply *run* anywhere.
+
+  - docker-compose:
+    - working with those boxes made easy
+    - with a simple yaml file and simple commands (up/down)
+
+  - these simplifies:
+    + *building*  |  *sharing* | *running*
+    ...applications consistently across different machines with few commands
+
+* BUT ✋🏼
+    #+BEGIN_QUOTE
+  Memorising docker commands is hard.
+    #+END_QUOTE
+
+* BUT ✋🏼🤨
+    #+BEGIN_QUOTE
+    Memorising aliases is slightly less hard.
+    #+END_QUOTE
+
+
+* BUT ✋🏼🫤
+    #+BEGIN_QUOTE
+    Keeping track of your containers across multiple terminal windows is near impossible.
+    #+END_QUOTE
+
+
+
+
+* what if told you 🪄
+#+CAPTION: what if i told you
+#+LABEL: fig:what_if_i_told_you
+#+ATTR_ORG: :width 600
+[[../images/what_if_i_told_you.png]]
+
+
+
+   ...You had all the information you needed
+
+   - in one terminal window
+   - with every common command living one keypress away
+
+* Show me what you got...🥸
+#+CAPTION: show me what you got
+#+ATTR_ORG: :width 1000
+[[../images/show-me-what-you-got-rick-and-morty.gif]]
+
+* Usecase
+
+  -    View logs
+  -    View environment variables
+  -    Check configuration
+  -    Exec into shell
+  -    Enter into the debugger
+
+* Demo time
+* Demo | OnetimeSecret
+https://onetimesecret.com/
+https://github.com/onetimesecret/onetimesecret
+
+
+1. clone the project
+#+begin_src bash
+git clone https://gist.github.com/thapakazi/a96ce649f5ba429f7fd0ad0de8d5dac5 /tmp/onetimesecrets
+cd /tmp/onetimesecrets
+#+end_src
+
+
+2. then lazydocker it 😎
+#+begin_src bash
+lazydocker
+#+end_src
+
+KeyBindings:
+
+   - *U* (shift + u )    :   up the project
+   - *D* (shift + d)     :   down the project
+
+more: https://github.com/jesseduffield/lazydocker/blob/master/docs/keybindings/Keybindings_en.md
