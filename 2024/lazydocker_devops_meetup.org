@@ -1,5 +1,6 @@
-#+TITLE: LazyDocker 😴🐳
+#+TITLE: LazyDocker 🥱🐳
 #+DATE: Saturday, Aug 10 2024
+#+STARTUP: overview
 
 * Intro 🙋🏽
 
@@ -19,13 +20,12 @@
 
     Lets  get started !!
 
-
 * Quick Recap 📚
 
   - with docker, we make "boxes"
   - "boxes" with your code, dependencies, and configuration.
     - these "boxes" can be:
-      - *Built* on one computer.
+      - *Built* on one computer
       - *Pushed* and stored remotely.
       - *Pulled* to another computer.
       - And simply *run* anywhere.
@@ -38,56 +38,88 @@
     + *building*  |  *sharing* | *running*
     ...applications consistently across different machines with few commands
 
+
 * BUT ✋🏼
     #+BEGIN_QUOTE
   Memorising docker commands is hard.
     #+END_QUOTE
+
+    #+begin_src bash
+# docker ps and exec it container
+docker ps
+docker exec -i -t my-app bash
+docker exec -i -t CONTAINER_ID bash
+
+# docker compose rituals
+docker compose up
+docker compose ps
+doker compose logs -f app
+docker compose logs -f app --tail 20
+    #+end_src
 
 * BUT ✋🏼🤨
     #+BEGIN_QUOTE
     Memorising aliases is slightly less hard.
     #+END_QUOTE
 
+Too many aliases and functions 😵
+
+    #+begin_src bash
+alias dl='docker ps -lq'
+alias dll='docker_fit ps -l'
+alias dps='docker_fit ps -a'
+
+function dk(){docker compose "$@" }
+function dke(){dk exec "$@" }
+function dkl(){dk logs -f "$@" }
+function dkr(){dk restart "$@" }
+
+function docker_img_sort_size(){ docker images --format '{{.ID}}   {{.Size}}   {{.Repository}}:{{.Tag}}' |sort -n -k 2 }
+    #+end_src
 
 * BUT ✋🏼🫤
     #+BEGIN_QUOTE
-    Keeping track of your containers across multiple terminal windows is near impossible.
+Keeping track of your containers across multiple terminal windows is +near impossible+. is not fun
     #+END_QUOTE
 
+ #+CAPTION: but i use tmux
+                            [[../images/but_i_use_tmux.png]]
 
 
-
-* what if told you 🪄
+* What if told you 🪄
 #+CAPTION: what if i told you
-#+LABEL: fig:what_if_i_told_you
-#+ATTR_ORG: :width 600
-[[../images/what_if_i_told_you.png]]
+
+                            [[../images/what_if_i_told_you.png]]
 
 
 
-   ...You had all the information you needed
-
+  *You had all the information you needed*
    - in one terminal window
    - with every common command living one keypress away
 
 * Show me what you got...🥸
 #+CAPTION: show me what you got
-#+ATTR_ORG: :width 1000
-[[../images/show-me-what-you-got-rick-and-morty.gif]]
 
-* Usecase
+                            [[../images/show-me-what-you-got-rick-and-morty.gif]]
+
+* Everyday rituals 😅
 
   -    View logs
+
   -    View environment variables
+
   -    Check configuration
+
   -    Exec into shell
+
   -    Enter into the debugger
 
+
 * Demo time
-* Demo | OnetimeSecret
+* Demo | OnetimeSecret 🔐
+
 https://onetimesecret.com/
 https://github.com/onetimesecret/onetimesecret
-
 
 1. clone the project
 #+begin_src bash
@@ -95,14 +127,9 @@ git clone https://gist.github.com/thapakazi/a96ce649f5ba429f7fd0ad0de8d5dac5 /tm
 cd /tmp/onetimesecrets
 #+end_src
 
-
-2. then lazydocker it 😎
-#+begin_src bash
-lazydocker
-#+end_src
+2. then run ~lazydocker~ 😎
 
 KeyBindings:
-
    - *U* (shift + u )    :   up the project
    - *D* (shift + d)     :   down the project
 
