@@ -28,7 +28,7 @@
 
 * Quick Recap 📚
 
-  - with docker, we make "boxes"
+  - with ~docker~, we make "boxes"
   - "boxes" with your code, dependencies, and configuration.
     - these "boxes" can be:
       - *Built* on one computer
@@ -36,7 +36,7 @@
       - *Pulled* to another computer.
       - And simply *run* anywhere.
 
-  - docker-compose:
+  - ~docker-compose~:
     - working with those boxes made easy
     - with a simple yaml file and simple commands (up/down)
 
@@ -122,6 +122,7 @@ Keeping track of your containers across multiple terminal windows is +near impos
 
                             time for some demo...
 
+
 * Demo | OnetimeSecret 🔐
 
 https://onetimesecret.com/
@@ -162,6 +163,20 @@ more: https://github.com/jesseduffield/lazydocker/blob/master/docs/keybindings/K
 
 
 
-* COMMENT Credits
+* Thank you...🙏😊 
+
+*Credits*
   - https://github.com/jesseduffield/lazydocker
   -  https://imgflip.com/memegenerator
+
+
+ *Resource*
+  - github: https://github.com/jesseduffield/lazydocker
+  - youtube: https://youtu.be/NICqQPxwJWw
+
+
+  #+BEGIN_QUOTE
+  any comments... ||  questions...??
+  #+END_QUOTE
+
+  Slides: https://github.com/thapakazi/slides/blob/main/2024/lazydocker_devops_meetup.org
