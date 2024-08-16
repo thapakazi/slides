@@ -1,7 +1,13 @@
-#+TITLE: LazyDocker 🥱🐳
-#+DATE: Saturday, Aug 10 2024
+#+TITLE: LazyDocker   🥱...🐳
+#+DATE: Wednesday, Aug 14 2024
+#+DESCRIPTION:  The lazier way to manage everything docker
 #+STARTUP: overview
+            The lazier way to manage everything docker
 
+               [[../images/lazydocker.png]]
+
+
+               https://github.com/jesseduffield/lazydocker
 * Intro 🙋🏽
 
     Greetings all !!
@@ -97,11 +103,6 @@ Keeping track of your containers across multiple terminal windows is +near impos
    - in one terminal window
    - with every common command living one keypress away
 
-* Show me what you got...🥸
-#+CAPTION: show me what you got
-
-                            [[../images/show-me-what-you-got-rick-and-morty.gif]]
-
 * Everyday rituals 😅
 
   -    View logs
@@ -114,23 +115,53 @@ Keeping track of your containers across multiple terminal windows is +near impos
 
   -    Enter into the debugger
 
+* Show me what you got...🥸
+#+CAPTION: show me what you got
 
-* Demo time
+                            [[../images/show-me-what-you-got-rick-and-morty.gif]]
+
+                            time for some demo...
+
 * Demo | OnetimeSecret 🔐
 
 https://onetimesecret.com/
 https://github.com/onetimesecret/onetimesecret
 
-1. clone the project
+lets clone and try:
 #+begin_src bash
-git clone https://gist.github.com/thapakazi/a96ce649f5ba429f7fd0ad0de8d5dac5 /tmp/onetimesecrets
-cd /tmp/onetimesecrets
-#+end_src
+  git clone https://gist.github.com/thapakazi/a96ce649f5ba429f7fd0ad0de8d5dac5 /tmp/onetimesecrets
 
-2. then run ~lazydocker~ 😎
+  cd /tmp/onetimesecrets
+
+  lazydocker
+#+end_src
 
 KeyBindings:
    - *U* (shift + u )    :   up the project
    - *D* (shift + d)     :   down the project
 
 more: https://github.com/jesseduffield/lazydocker/blob/master/docs/keybindings/Keybindings_en.md
+
+* Demo | Custom App
+
+ https://github.com/thapakazi/docker-rails-react/
+
+#+BEGIN_EXAMPLE
+                 nginx
+                     |
+                     |
+    frontend ---------> api
+                                  |
+                                  |
+                         +-----+-----+
+                          |               |
+                        db          cache
+
+#+END_EXAMPLE
+
+
+
+
+* COMMENT Credits
+  - https://github.com/jesseduffield/lazydocker
+  -  https://imgflip.com/memegenerator
